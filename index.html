@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-page="portal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#13213a">
+  <meta name="description" content="AndreLab — Ciência Interativa: Física, Ciências e Robótica Educacional.">
+  <title>AndreLab | Ciência Interativa</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/png" href="assets/logo-andrelab.png">
+</head>
+<body class="portal-page">
+  <header class="main-header">
+    <a class="brand" href="index.html" aria-label="AndreLab, página inicial">
+      <span class="brand-mark" aria-hidden="true"><img src="assets/logo-andrelab.png" alt=""></span>
+      <span class="brand-copy"><strong>AndreLab</strong><small>CIÊNCIA INTERATIVA</small></span>
+    </a>
+    <p class="tagline">Ciência · Tecnologia · Aprendizagem</p>
+  </header>
+
+  <main class="main-content">
+    <section class="hero-section home-hero" aria-labelledby="hero-title">
+      <img class="hero-logo" src="assets/logo-andrelab.png" alt="AndreLab — Ciência, Física, Robótica e EJA" width="220" height="220">
+      <span class="eyebrow">LABORATÓRIO VIRTUAL DE APRENDIZAGEM</span>
+      <h1 id="hero-title">Aprenda <span>explorando</span>.</h1>
+      <p>Acesse aulas interativas, investigue fenômenos e aprenda por meio de experiências digitais voltadas ao Ensino Regular e à EJA.</p>
+
+      <form class="search-box" id="buscaPortal" role="search">
+        <label class="sr-only" for="inputBusca">Pesquisar áreas e conteúdos</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="inputBusca" name="q" type="search" placeholder="O que você quer investigar? Ex.: gravidade, circuitos..." autocomplete="off">
+        <button class="btn-search" type="submit">Buscar</button>
+      </form>
+      <p class="search-status" id="mensagemBuscaPortal" role="status" aria-live="polite">Explore as áreas disponíveis.</p>
+    </section>
+
+    <section class="portal-grid" id="cardsPortal" aria-label="Áreas de aprendizagem">
+      <article class="portal-card physics" data-search="física fisica física interativa regular eja mecânica dinâmica força gravidade newton energia movimento">
+        <div class="card-topline"><span class="area-icon" aria-hidden="true">⚛</span><span class="area-label">FÍSICA</span></div>
+        <h2>Física Interativa</h2>
+        <p>Explore mecânica clássica, forças, movimento e gravitação por meio de aulas investigativas e simulações interativas.</p>
+        <div class="tag-list"><span>Ensino Regular</span><span>EJA</span><span>Simulações</span></div>
+        <a class="btn-action" href="fisica.html">Acessar catálogo de Física <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="portal-card science" data-search="ciências ciencias ecossistemas atmosfera terra transformações químicas matéria método experimental natureza">
+        <div class="card-topline"><span class="area-icon" aria-hidden="true">🌱</span><span class="area-label">CIÊNCIAS</span></div>
+        <h2>Ciências</h2>
+        <p>Investigue os ecossistemas, os fenômenos da Terra, as transformações da matéria e o método científico.</p>
+        <div class="tag-list"><span>Anos finais</span><span>EJA</span><span>Investigação</span></div>
+        <button class="btn-action btn-secondary" type="button" data-coming-soon="Ciências">Em desenvolvimento <span aria-hidden="true">↗</span></button>
+      </article>
+
+      <article class="portal-card robotics" data-search="robótica robotica educacional programação circuitos eletrônica automação montagem projetos tecnologia arduino">
+        <div class="card-topline"><span class="area-icon" aria-hidden="true">🤖</span><span class="area-label">ROBÓTICA</span></div>
+        <h2>Robótica Educacional</h2>
+        <p>Conheça projetos de montagem, programação, circuitos elétricos e automação com atividades mão na massa.</p>
+        <div class="tag-list"><span>Projetos</span><span>Programação</span><span>Eletrônica</span></div>
+        <button class="btn-action btn-secondary" type="button" data-coming-soon="Robótica Educacional">Em desenvolvimento <span aria-hidden="true">↗</span></button>
+      </article>
+    </section>
+    <p id="semResultadosPortal" class="empty-state" hidden>Nenhuma área encontrada. Experimente buscar por “Física”, “Ciências” ou “Robótica”.</p>
+  </main>
+
+  <footer class="footer-bar">
+    <span>AndreLab · Ciência Interativa</span>
+    <span>Desenvolvido por Prof. Carlos André</span>
+    <span>© <span id="anoAtual"></span></span>
+  </footer>
+</body>
+</html>

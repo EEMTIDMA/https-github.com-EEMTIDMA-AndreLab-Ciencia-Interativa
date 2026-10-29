@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#13213a">
+  <meta name="description" content="Laboratório 3D interativo de Gravitação Universal do AndreLab Ciência Interativa.">
+  <title>AndreLab | Gravitação Universal 3D</title>
+
+  <link rel="stylesheet" href="aula.css">
+  <script type="module" src="aula.js"></script>
+</head>
+
+<body>
+  <div class="space-glow glow-one"></div>
+  <div class="space-glow glow-two"></div>
+
+  <header class="app-header">
+    <a class="brand" href="index.html" aria-label="Voltar ao AndreLab">
+      <span class="brand-mark">A<span>✦</span></span>
+      <span>
+        <strong>AndreLab</strong>
+        <small>CIÊNCIA INTERATIVA</small>
+      </span>
+    </a>
+
+    <div class="module-info">
+      <span class="eyebrow">LABORATÓRIO DE FÍSICA</span>
+      <h1>Gravitação Universal <span>3D</span></h1>
+    </div>
+
+    <a class="back-button" href="index.html">
+      <span aria-hidden="true">←</span> Menu principal
+    </a>
+  </header>
+
+  <main class="app-main">
+    <section class="lesson-heading">
+      <div>
+        <p class="eyebrow">TRILHA DE APRENDIZAGEM · FÍSICA</p>
+        <h2>Explore a força que conecta os astros.</h2>
+        <p class="lesson-subtitle">
+          Observe, investigue, simule e descubra como a gravidade atua no Universo.
+        </p>
+      </div>
+
+      <div class="lesson-status">
+        <span class="status-dot"></span>
+        <span id="status3D">Preparando laboratório 3D...</span>
+      </div>
+    </section>
+
+    <section class="lesson-shell" aria-label="Aula interativa de gravitação">
+      <aside class="lesson-sidebar">
+        <p class="sidebar-title">ROTEIRO DA AULA</p>
+
+        <button class="step-link active" data-goto="1">
+          <span class="step-number">01</span>
+          <span><strong>Introdução</strong><small>O enigma da Lua</small></span>
+        </button>
+
+        <button class="step-link" data-goto="2">
+          <span class="step-number">02</span>
+          <span><strong>Modelo gravitacional</strong><small>Atração entre massas</small></span>
+        </button>
+
+        <button class="step-link" data-goto="3">
+          <span class="step-number">03</span>
+          <span><strong>Simulador 3D</strong><small>Manipule os parâmetros</small></span>
+        </button>
+
+        <button class="step-link" data-goto="4">
+          <span class="step-number">04</span>
+          <span><strong>Matemática</strong><small>A lei de Newton</small></span>
+        </button>
+
+        <button class="step-link" data-goto="5">
+          <span class="step-number">05</span>
+          <span><strong>Investigação</strong><small>Formule sua hipótese</small></span>
+        </button>
+
+        <button class="step-link" data-goto="6">
+          <span class="step-number">06</span>
+          <span><strong>Avaliação</strong><small>Teste o que aprendeu</small></span>
+        </button>
+
+        <div class="sidebar-note">
+          <span aria-hidden="true">✦</span>
+          <p>Aprender ciência é observar, questionar e testar ideias.</p>
+        </div>
+      </aside>
+
+      <div class="lesson-content">
+        <div class="lesson-progress">
+          <div class="progress-track">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <span id="progressLabel">Etapa 1 de 6</span>
+        </div>
+
+        <!-- ETAPA 1 -->
+        <section class="slide active" id="screen1" data-title="Introdução">
+          <div class="slide-heading">
+            <span class="chapter-tag">01 · DESPERTAR A CURIOSIDADE</span>
+            <h2>Por que a Lua não cai na Terra?</h2>
+            <p>
+              A gravidade é a força de atração entre corpos que possuem massa. A Terra atrai a Lua continuamente, enquanto a Lua mantém uma velocidade lateral, também chamada tangencial. Essa combinação faz com que ela esteja sempre desviando sua trajetória em direção à Terra, mas continue avançando ao redor do planeta. Assim, a Lua permanece em órbita em vez de cair diretamente sobre a superfície terrestre.
+            </p>
+          </div>
+
+          <div class="intro-grid">
+            <div class="concept-card">
+              <span class="mini-label">PENSE NISSO</span>
+              <h3>Uma queda que nunca termina?</h3>
+              <p>
+                Imagine lançar uma bola horizontalmente. Quanto maior a
+                velocidade, mais longe ela percorre antes de atingir o solo.
+                Em uma órbita, o movimento e a curvatura da trajetória permitem
+                que o corpo continue ao redor do planeta.
+              </p>
+
+              <div class="question-callout">
+                <span class="callout-icon">?</span>
+                <div>
+                  <strong>Questão investigativa</strong>
+                  <p>O que aconteceria se a velocidade orbital fosse muito menor?</p>
+                </div>
+              </div>
+
+              <div class="scene-hint">
+                <span class="live-dot"></span>
+                Arraste para girar · Use a roda do mouse para aproximar
+              </div>
+            </div>
+
+            <div class="scene-card">
+              <div class="scene-topline">
+                <span><i class="live-dot"></i> VISUALIZAÇÃO ESPACIAL</span>
+                <span class="scene-badge">3D INTERATIVO</span>
+              </div>
+              <div class="scene-frame" id="sceneSlot1">
+                <div class="scene-loading">Carregando a cena espacial...</div>
+              </div>
+              <div class="scene-caption">
+                <span>Terra e Lua</span>
+                <span>Representação didática, sem escala real</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="learning-strip">
+            <span class="strip-icon">✦</span>
+            <p><strong>Ideia central:</strong> a gravidade altera continuamente a direção do movimento da Lua.</p>
+          </div>
+
+          <section class="learning-goals" aria-labelledby="learningGoalsTitle">
+            <span class="mini-label">AO FINAL DESTA AULA, VOCÊ DEVERÁ SER CAPAZ DE</span>
+            <h3 id="learningGoalsTitle">O que vamos aprender</h3>
+            <ul>
+              <li>Explicar como a gravidade e a velocidade mantêm a Lua em órbita.</li>
+              <li>Reconhecer que dois corpos exercem forças gravitacionais mútuas, de mesma intensidade e sentidos opostos.</li>
+              <li>Identificar as grandezas da Lei da Gravitação Universal e suas unidades.</li>
+              <li>Prever como mudanças nas massas e na distância alteram a força gravitacional.</li>
+              <li>Investigar uma hipótese usando a simulação e justificar conclusões com evidências.</li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- ETAPA 2 -->
+        <section class="slide" id="screen2" data-title="Modelo gravitacional" hidden>
+          <div class="slide-heading">
+            <span class="chapter-tag">02 · OBSERVAR E INTERPRETAR</span>
+            <h2>A atração é mútua.</h2>
+            <p>
+              Segundo a Lei da Gravitação Universal, todos os corpos que possuem massa exercem atração gravitacional uns sobre os outros. As forças entre dois corpos têm a mesma intensidade e sentidos opostos, e atuam ao longo da linha que une seus centros. Como cada força age em um corpo diferente, elas não se anulam entre si: ambos participam da interação gravitacional.
+            </p>
+          </div>
+
+          <div class="scene-card large-scene">
+            <div class="scene-topline">
+              <span><i class="live-dot"></i> MODELO DE FORÇAS</span>
+              <span class="scene-badge">VETORES GRAVITACIONAIS</span>
+            </div>
+            <div class="scene-frame" id="sceneSlot2">
+              <div class="scene-loading">Preparando o modelo gravitacional...</div>
+            </div>
+            <div class="scene-caption">
+              <span>Os vetores apontam um para o outro.</span>
+              <span>Setas esquemáticas, não em escala</span>
+            </div>
+          </div>
+
+          <div class="three-facts">
+            <article class="fact-card">
+              <span class="fact-symbol blue">M</span>
+              <h3>Massa</h3>
+              <p>Mais massa significa maior força gravitacional, mantendo os outros fatores constantes.</p>
+            </article>
+            <article class="fact-card">
+              <span class="fact-symbol purple">r</span>
+              <h3>Distância</h3>
+              <p>Quanto maior a distância entre os centros, menor a força gravitacional.</p>
+            </article>
+            <article class="fact-card">
+              <span class="fact-symbol green">↔</span>
+              <h3>Ação mútua</h3>
+              <p>Os dois corpos exercem forças de mesma intensidade e sentidos opostos.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ETAPA 3 -->
+        <section class="slide" id="screen3" data-title="Simulador 3D" hidden>
+          <div class="slide-heading">
+            <span class="chapter-tag">03 · EXPERIMENTAÇÃO</span>
+            <h2>Controle a gravidade.</h2>
+            <p>
+              Neste simulador, altere a massa de cada corpo e a distância entre seus centros para investigar como a força gravitacional muda. Aumentar uma das massas aumenta a força; aumentar a distância reduz a força de acordo com o quadrado desse valor. Modifique um parâmetro por vez e compare o resultado numérico com a representação visual. Os valores são didáticos e representam corpos hipotéticos.
+            </p>
+          </div>
+
+          <div class="simulator-grid">
+            <div class="scene-card simulator-scene">
+              <div class="scene-topline">
+                <span><i class="live-dot"></i> SIMULAÇÃO EM TEMPO REAL</span>
+                <span class="scene-badge">MODO EXPERIMENTAL</span>
+              </div>
+              <div class="scene-frame" id="sceneSlot3">
+                <div class="scene-loading">Inicializando simulador...</div>
+              </div>
+              <div class="scene-caption">
+                <span id="simulationCaption">Dois corpos e sua atração mútua</span>
+                <span>Visualização esquemática</span>
+              </div>
+              <div class="scene-actions">
+                <button class="secondary-button" id="toggleOrbit" type="button">Ⅱ Pausar movimento</button>
+                <button class="secondary-button" id="resetCamera" type="button">↻ Reposicionar câmera</button>
+              </div>
+            </div>
+
+            <aside class="controls-card">
+              <div class="controls-title">
+                <div>
+                  <span class="mini-label">PAINEL DE CONTROLE</span>
+                  <h3>Parâmetros físicos</h3>
+                </div>
+                <span class="control-icon">⚙</span>
+              </div>
+
+              <div class="range-control">
+                <label for="simMassA">
+                  Massa do corpo A
+                  <output id="txtMassA">5,0</output>
+                </label>
+                <input id="simMassA" type="range" min="1" max="10" step="0.5" value="5">
+                <div class="range-ends"><span>1 × 10²⁰ kg</span><span>10 × 10²⁰ kg</span></div>
+              </div>
+
+              <div class="range-control">
+                <label for="simMassB">
+                  Massa do corpo B
+                  <output id="txtMassB">5,0</output>
+                </label>
+                <input id="simMassB" type="range" min="1" max="10" step="0.5" value="5">
+                <div class="range-ends"><span>1 × 10²⁰ kg</span><span>10 × 10²⁰ kg</span></div>
+              </div>
+
+              <div class="range-control">
+                <label for="simDist">
+                  Distância entre centros
+                  <output id="txtDist">2,0</output>
+                </label>
+                <input id="simDist" type="range" min="1" max="5" step="0.1" value="2">
+                <div class="range-ends"><span>1 × 10⁶ m</span><span>5 × 10⁶ m</span></div>
+              </div>
+
+              <div class="force-result">
+                <span>FORÇA GRAVITACIONAL</span>
+                <strong id="txtForce">4,171 × 10¹⁸ N</strong>
+                <small id="forceDescription">Resultado calculado pela Lei de Newton</small>
+              </div>
+
+              <button class="primary-button full-button" id="resetSimulation" type="button">
+                Restaurar valores iniciais
+              </button>
+
+              <p class="controls-footnote">
+                A distância é medida entre os centros dos corpos, não entre suas superfícies.
+              </p>
+            </aside>
+          </div>
+
+          <section class="phet-section" aria-labelledby="phetHeading">
+            <div class="phet-section-heading">
+              <span class="chapter-tag">LABORATÓRIOS COMPLEMENTARES</span>
+              <h3 id="phetHeading">Compare o modelo 3D com simulações científicas</h3>
+              <p>Explore os laboratórios PhET para investigar a intensidade da força gravitacional e observar como a gravidade influencia o movimento orbital. As simulações abrem aqui na página; se o navegador bloquear a incorporação, use o link para abrir o laboratório em uma nova aba.</p>
+            </div>
+
+            <div class="phet-grid">
+              <article class="phet-card">
+                <div class="phet-card-heading">
+                  <div>
+                    <span class="mini-label">PHET · LABORATÓRIO 01</span>
+                    <h4>Laboratório de Força Gravitacional</h4>
+                  </div>
+                  <span class="phet-index">01</span>
+                </div>
+                <p>Altere as massas e a distância para comparar como esses fatores afetam a força entre dois corpos.</p>
+                <div class="phet-frame">
+                  <iframe
+                    src="https://phet.colorado.edu/sims/html/gravity-force-lab/latest/gravity-force-lab_all.html?locale=pt_BR"
+                    title="Simulação PhET: Laboratório de Força Gravitacional em português"
+                    loading="lazy"
+                    allow="fullscreen"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <a class="phet-external-link" href="https://phet.colorado.edu/sims/html/gravity-force-lab/latest/gravity-force-lab_all.html?locale=pt_BR" target="_blank" rel="noopener noreferrer">Abrir o laboratório em nova aba ↗</a>
+              </article>
+
+              <article class="phet-card">
+                <div class="phet-card-heading">
+                  <div>
+                    <span class="mini-label">PHET · LABORATÓRIO 02</span>
+                    <h4>Gravidade e Órbitas</h4>
+                  </div>
+                  <span class="phet-index">02</span>
+                </div>
+                <p>Observe a relação entre gravidade, velocidade e órbita de corpos celestes em diferentes sistemas.</p>
+                <div class="phet-frame">
+                  <iframe
+                    src="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html?locale=pt_BR"
+                    title="Simulação PhET: Gravidade e Órbitas em português"
+                    loading="lazy"
+                    allow="fullscreen"
+                    allowfullscreen
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                <a class="phet-external-link" href="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html?locale=pt_BR" target="_blank" rel="noopener noreferrer">Abrir a simulação em nova aba ↗</a>
+              </article>
+            </div>
+            <p class="phet-note"><strong>Proposta de investigação:</strong> mude apenas uma variável por vez, registre o que observou e compare os resultados com a Lei da Gravitação Universal apresentada na etapa 4.</p>
+          </section>
+        </section>
+
+        <!-- ETAPA 4 -->
+        <section class="slide" id="screen4" data-title="Aplicação matemática" hidden>
+          <div class="slide-heading">
+            <span class="chapter-tag">04 · TRADUZIR EM MATEMÁTICA</span>
+            <h2>A lei de Newton em números.</h2>
+            <p>
+              A Lei da Gravitação Universal permite calcular a força de atração entre dois corpos. A intensidade da força é diretamente proporcional ao produto das duas massas e inversamente proporcional ao quadrado da distância entre seus centros. Isso significa que corpos mais massivos exercem uma atração maior, enquanto o afastamento reduz a força rapidamente. No cálculo, as massas são expressas em quilogramas, a distância em metros e a força em newtons.
+            </p>
+          </div>
+
+          <div class="formula-card">
+            <span class="mini-label">LEI DA GRAVITAÇÃO UNIVERSAL</span>
+            <div class="main-formula">
+              F = <span class="fraction"><span>G · m₁ · m₂</span><span>r²</span></span>
+            </div>
+            <div class="formula-legend">
+              <span><b>F</b> = força gravitacional (N)</span>
+              <span><b>G</b> = constante gravitacional</span>
+              <span><b>m₁ e m₂</b> = massas (kg)</span>
+              <span><b>r</b> = distância entre os centros (m)</span>
+            </div>
+          </div>
+
+          <div class="calculation-card">
+            <div class="calculation-header">
+              <div>
+                <span class="mini-label">CÁLCULO ATUALIZADO</span>
+                <h3>Seus valores do simulador</h3>
+              </div>
+              <span class="calculation-symbol">ƒ(x)</span>
+            </div>
+
+            <p class="equation-line" id="equationSubstitution">
+              F = G · (5,0 × 10²⁰) · (5,0 × 10²⁰) / (2,0 × 10⁶)²
+            </p>
+            <div class="equation-result">
+              <span>Resultado</span>
+              <strong id="mathResult">4,171 × 10¹⁸ N</strong>
+            </div>
+            <p class="muted-note">
+              Este resultado é atualizado automaticamente quando você modifica
+              as massas ou a distância na etapa do simulador.
+            </p>
+          </div>
+
+          <div class="concept-comparison">
+            <div>
+              <span class="comparison-icon">↑</span>
+              <p><strong>Dobrar uma massa</strong><br>Duplica a força, se os demais valores não mudarem.</p>
+            </div>
+            <div>
+              <span class="comparison-icon">↗</span>
+              <p><strong>Dobrar a distância</strong><br>Reduz a força para um quarto do valor inicial.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ETAPA 5 -->
+        <section class="slide" id="screen5" data-title="Investigação" hidden>
+          <div class="slide-heading">
+            <span class="chapter-tag">05 · MÉTODO CIENTÍFICO</span>
+            <h2>Faça uma previsão antes de testar.</h2>
+            <p>
+              Investigar cientificamente envolve formular uma hipótese, fazer uma previsão e testá-la por meio de observações ou experimentos. Nesta atividade, mantenha as massas constantes e preveja o que acontece quando a distância entre os corpos dobra. Depois, compare sua previsão com os valores apresentados pelo simulador. Essa comparação ajuda a verificar a hipótese e a construir uma explicação baseada em evidências.
+            </p>
+          </div>
+
+          <div class="investigation-layout">
+            <div class="investigation-card">
+              <span class="investigation-number">DESAFIO 01</span>
+              <h3>E se a distância dobrar?</h3>
+              <p>
+                Mantendo as duas massas constantes, imagine que a distância
+                entre os centros dos corpos passe de
+                <strong id="hypothesisInitialDistance">2,0 × 10⁶ m</strong>
+                para o dobro desse valor.
+              </p>
+
+              <fieldset class="hypothesis-options">
+                <legend>Qual é a sua previsão?</legend>
+                <label class="choice-card">
+                  <input type="radio" name="hypothesis" value="double">
+                  <span>A força dobra.</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="hypothesis" value="half">
+                  <span>A força cai pela metade.</span>
+                </label>
+                <label class="choice-card">
+                  <input type="radio" name="hypothesis" value="quarter">
+                  <span>A força cai para um quarto.</span>
+                </label>
+              </fieldset>
+
+              <label class="textarea-label" for="hypothesisText">
+                Explique sua hipótese (opcional)
+              </label>
+              <textarea
+                id="hypothesisText"
+                rows="4"
+                placeholder="Escreva como você chegou a essa previsão..."
+              ></textarea>
+
+              <button class="primary-button" id="testHypothesis" type="button">
+                Testar minha hipótese
+              </button>
+
+              <div id="hypothesisFeedback" class="feedback-panel" role="status" aria-live="polite" hidden></div>
+            </div>
+
+            <div class="experiment-summary">
+              <span class="mini-label">LEMBRETE CIENTÍFICO</span>
+              <div class="inverse-square">F ∝ <span>1/r²</span></div>
+              <p>
+                O símbolo ∝ significa “é proporcional a”. A força varia com
+                o inverso do quadrado da distância quando as massas são mantidas constantes.
+              </p>
+
+              <div class="mini-experiment">
+                <div><span>Distância inicial</span><strong id="experimentR1">2,0 × 10⁶ m</strong></div>
+                <div><span>Distância final</span><strong id="experimentR2">4,0 × 10⁶ m</strong></div>
+                <div><span>Força inicial</span><strong id="experimentF1">4,171 × 10¹⁸ N</strong></div>
+                <div><span>Força final prevista</span><strong id="experimentF2">1,043 × 10¹⁸ N</strong></div>
+              </div>
+
+              <button class="secondary-button full-button" id="openSimulator" type="button">
+                Voltar ao simulador
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ETAPA 6 -->
+        <section class="slide" id="screen6" data-title="Avaliação" hidden>
+          <div class="slide-heading">
+            <span class="chapter-tag">06 · VERIFICAR A APRENDIZAGEM</span>
+            <h2>Agora é sua vez.</h2>
+            <p>
+              Responda a uma questão por vez, confira o feedback, avance no desafio
+              e descubra sua pontuação e as justificativas ao final.
+            </p>
+          </div>
+
+          <div class="quiz-card quiz-assessment">
+            <div class="quiz-overview">
+              <span class="quiz-label">AVALIAÇÃO FINAL</span>
+              <p>São cinco desafios sobre a Gravitação Universal. Escolha uma alternativa, confirme sua resposta e avance. Você poderá voltar às questões anteriores antes de finalizar.</p>
+            </div>
+            <div class="quiz-game-status" aria-live="polite">
+              <div class="quiz-status-line"><span id="quizProgressLabel">QUESTÃO 1 DE 5</span><span id="quizScorePreview">0 respostas confirmadas</span></div>
+              <div class="quiz-progress-track" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" id="quizProgressBar"><span id="quizProgressFill"></span></div>
+              <div class="quiz-step-dots" id="quizStepDots" aria-label="Questões do quiz"><span class="active">1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+            </div>
+            <form id="quizForm">
+
+              <fieldset class="quiz-question" data-question="1" data-correct="b" data-explanation=" A gravidade atua sobre a Lua e muda a direção de seu movimento. Sua velocidade tangencial, junto com essa atração, permite a órbita.">
+                <legend><span class="quiz-label">QUESTÃO 01</span><span class="quiz-topic">ÓRBITA DA LUA</span></legend>
+                <h3>Por que a Lua permanece em órbita ao redor da Terra?</h3>
+                <div class="quiz-options" aria-label="Alternativas da questão 1">
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer1" value="a">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Porque a gravidade da Terra deixa de atuar na Lua.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer1" value="b">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">Porque a gravidade curva continuamente sua trajetória enquanto ela possui velocidade lateral.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer1" value="c">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">Porque a Lua não possui movimento.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer1" value="d">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">Porque não existe gravidade no espaço.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer1" value="e">
+                    <span class="option-letter">E</span>
+                    <span class="option-text">Porque a Lua está fora da influência da Terra.</span>
+                  </label>
+
+                </div>
+              </fieldset>
+
+              <fieldset class="quiz-question" data-question="2" data-correct="a" data-explanation=" Pela interação gravitacional, os dois corpos exercem forças de mesma intensidade e sentidos opostos, embora suas acelerações sejam diferentes.">
+                <legend><span class="quiz-label">QUESTÃO 02</span><span class="quiz-topic">AÇÃO MÚTUA</span></legend>
+                <h3>Quando a Terra atrai a Lua, como se compara a força que a Lua exerce sobre a Terra?</h3>
+                <div class="quiz-options" aria-label="Alternativas da questão 2">
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer2" value="a">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">Tem a mesma intensidade e sentido oposto.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer2" value="b">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">É sempre maior que a força da Terra sobre a Lua.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer2" value="c">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">É sempre menor que a força da Terra sobre a Lua.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer2" value="d">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">É nula, pois a Lua tem menos massa.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer2" value="e">
+                    <span class="option-letter">E</span>
+                    <span class="option-text">Só existe quando os corpos se aproximam.</span>
+                  </label>
+
+                </div>
+              </fieldset>
+
+              <fieldset class="quiz-question" data-question="3" data-correct="d" data-explanation=" A força é diretamente proporcional ao produto das massas. Duplicar apenas uma delas duplica a força gravitacional.">
+                <legend><span class="quiz-label">QUESTÃO 03</span><span class="quiz-topic">INFLUÊNCIA DAS MASSAS</span></legend>
+                <h3>Mantendo a distância e a massa do corpo B constantes, o que ocorre se a massa do corpo A for duplicada?</h3>
+                <div class="quiz-options" aria-label="Alternativas da questão 3">
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer3" value="a">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">A força cai para um quarto.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer3" value="b">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">A força não se altera.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer3" value="c">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">A força aumenta quatro vezes.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer3" value="d">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">A força dobra.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer3" value="e">
+                    <span class="option-letter">E</span>
+                    <span class="option-text">A força cai pela metade.</span>
+                  </label>
+
+                </div>
+              </fieldset>
+
+              <fieldset class="quiz-question" data-question="4" data-correct="c" data-explanation=" Como F é proporcional a 1/r², duplicar a distância multiplica o denominador por quatro e reduz a força a um quarto.">
+                <legend><span class="quiz-label">QUESTÃO 04</span><span class="quiz-topic">INFLUÊNCIA DA DISTÂNCIA</span></legend>
+                <h3>Se a distância entre os centros de dois corpos for duplicada, mantendo as massas constantes, o que acontece com a força?</h3>
+                <div class="quiz-options" aria-label="Alternativas da questão 4">
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer4" value="a">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">A força dobra.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer4" value="b">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">A força cai pela metade.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer4" value="c">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">A força fica igual a um quarto.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer4" value="d">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">A força permanece igual.</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer4" value="e">
+                    <span class="option-letter">E</span>
+                    <span class="option-text">A força aumenta quatro vezes.</span>
+                  </label>
+
+                </div>
+              </fieldset>
+
+              <fieldset class="quiz-question" data-question="5" data-correct="e" data-explanation=" A força é calculada por F = G·m₁·m₂/r². G é a constante gravitacional, m₁ e m₂ são as massas e r é a distância entre os centros dos corpos.">
+                <legend><span class="quiz-label">QUESTÃO 05</span><span class="quiz-topic">LEI DA GRAVITAÇÃO</span></legend>
+                <h3>Qual expressão representa corretamente a Lei da Gravitação Universal de Newton?</h3>
+                <div class="quiz-options" aria-label="Alternativas da questão 5">
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer5" value="a">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">F = G · r² / (m₁ · m₂)</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer5" value="b">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">F = m₁ + m₂ + r</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer5" value="c">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">F = G · m₁ · m₂ · r²</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer5" value="d">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">F = G · (m₁ + m₂) / r</span>
+                  </label>
+
+                  <label class="quiz-option">
+                    <input type="radio" name="quizAnswer5" value="e">
+                    <span class="option-letter">E</span>
+                    <span class="option-text">F = G · m₁ · m₂ / r²</span>
+                  </label>
+
+                </div>
+              </fieldset>
+
+              <div class="quiz-controls">
+                <button class="secondary-button" id="quizPrevious" type="button" disabled>← Anterior</button>
+                <button class="primary-button quiz-submit" id="quizConfirm" type="button">Confirmar resposta</button>
+                <button class="primary-button" id="quizNext" type="button" disabled>Próxima questão →</button>
+                <button class="primary-button quiz-submit" id="quizFinish" type="button" hidden>Ver resultado final</button>
+              </div>
+            </form>
+            <div id="quizFeedback" class="feedback-panel" role="status" aria-live="polite" hidden></div>
+          </div>
+
+          <div class="completion-card" id="completionCard" hidden>
+            <span class="completion-icon">✦</span>
+            <div class="quiz-result-content">
+              <h3>Desafio concluído!</h3>
+              <p id="quizResultSummary">Confira seu desempenho no quiz de Gravitação Universal.</p>
+              <div id="quizResultDetails" class="quiz-result-details"></div>
+              <div id="quizReview" class="quiz-review" aria-label="Correção comentada das questões"></div>
+            </div>
+            <button class="secondary-button" id="quizRetry" type="button">Refazer quiz</button>
+            <a class="primary-button link-button" href="index.html">Voltar ao AndreLab</a>
+          </div>
+        </section>
+
+        <footer class="slide-footer">
+          <button class="secondary-button" id="previousSlide" type="button" disabled>
+            ← Anterior
+          </button>
+
+          <div class="footer-center">
+            <span id="slideCounter">01 / 06</span>
+            <div class="footer-dots" aria-label="Progresso da aula">
+              <span class="footer-dot active"></span>
+              <span class="footer-dot"></span>
+              <span class="footer-dot"></span>
+              <span class="footer-dot"></span>
+              <span class="footer-dot"></span>
+              <span class="footer-dot"></span>
+            </div>
+          </div>
+
+          <button class="primary-button" id="nextSlide" type="button">
+            Próxima etapa →
+          </button>
+
+          <div class="slide-signature" aria-label="Identificação e autoria da aula">
+            <span class="slide-signature-brand">AndreLab <span>Ciência Interativa</span></span>
+            <span class="slide-signature-author">Prof. Carlos André</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+    <p class="source-note">
+      Modelo didático de Física. A visualização não representa escala astronômica real.
+      Texturas planetárias carregadas de recursos externos; é necessária conexão com a internet
+      para carregar a biblioteca 3D e as texturas.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <span>AndreLab Ciência Interativa</span>
+    <span>Aprender · Experimentar · Descobrir</span>
+  </footer>
+</body>
+</html>

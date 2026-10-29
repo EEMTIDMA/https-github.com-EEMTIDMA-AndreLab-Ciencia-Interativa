@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --navy-950: #101b2d;
+  --navy-900: #13213a;
+  --navy-800: #203653;
+  --navy-700: #29496e;
+  --ink: #172943;
+  --muted: #50647e;
+  --muted-light: #c7d4e5;
+  --surface: #ffffff;
+  --surface-soft: #f2f6fb;
+  --line: #d5e0ed;
+  --blue: #2563eb;
+  --blue-light: #e8f1ff;
+  --purple: #7544b8;
+  --green: #087f5b;
+  --gold: #956000;
+  --shadow: 0 14px 34px rgba(3, 13, 30, .16);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'DM Sans', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(75, 140, 210, .34), transparent 42%),
+    radial-gradient(ellipse at 92% 18%, rgba(137, 106, 205, .22), transparent 38%),
+    linear-gradient(135deg, #243956 0%, #182a45 50%, #263b58 100%);
+  background-attachment: fixed;
+}
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px clamp(18px, 5vw, 64px);
+  color: #fff;
+  background: rgba(18, 31, 52, .94);
+  border-bottom: 1px solid rgba(179, 207, 242, .2);
+  box-shadow: 0 8px 25px rgba(3, 13, 30, .12);
+}
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand-mark {
+  display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px;
+  background: linear-gradient(135deg, #60a5fa, #8b5cf6); color: #fff;
+  font: 700 1.6rem 'Space Grotesk', sans-serif; box-shadow: 0 5px 18px rgba(96, 165, 250, .25);
+}
+.brand-copy { display: grid; line-height: 1.15; }
+.brand-copy strong { font: 700 1.5rem 'Space Grotesk', sans-serif; letter-spacing: -.04em; }
+.brand-copy small { margin-top: 5px; font-size: .68rem; letter-spacing: .16em; color: #b9d0ee; font-weight: 700; }
+.tagline { margin: 0; color: #d2dfef; font-size: .84rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+
+.main-content { width: min(1120px, calc(100% - 36px)); margin: 0 auto; padding: 42px 0 54px; }
+.hero-section { text-align: center; margin: 0 auto 28px; max-width: 850px; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px;
+  background: rgba(219, 234, 254, .13); border: 1px solid rgba(219, 234, 254, .26);
+  color: #d9eaff; font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+}
+.hero-section h1 { margin: 12px 0 8px; color: #fff; font: 700 clamp(2.1rem, 5vw, 3.3rem)/1.1 'Space Grotesk', sans-serif; letter-spacing: -.045em; }
+.hero-section h1 span { color: #9cc8ff; }
+.hero-section > p { max-width: 720px; margin: 0 auto; color: #e1eaf5; font-size: 1.02rem; }
+.search-box {
+  display: flex; align-items: center; gap: 10px; max-width: 720px; margin: 24px auto 0; padding: 7px;
+  background: #fff; border: 1px solid #d8e4f2; border-radius: 14px; box-shadow: 0 12px 28px rgba(4, 15, 34, .22);
+}
+.search-icon { padding-left: 10px; color: #506782; font-size: 1.7rem; line-height: 1; }
+.search-box input { min-width: 0; flex: 1; padding: 10px 4px; border: 0; outline: 0; color: var(--ink); background: transparent; font-size: .95rem; }
+.search-box input::placeholder { color: #687b93; opacity: 1; }
+.search-box:focus-within { outline: 3px solid rgba(147, 197, 253, .45); border-color: #75a7e8; }
+.btn-search { flex: 0 0 auto; white-space: nowrap; border: 0; border-radius: 10px; padding: 11px 19px; background: #1d4ed8; color: #fff; font-weight: 700; cursor: pointer; transition: background .18s, transform .18s; }
+.btn-search:hover { background: #163eae; transform: translateY(-1px); }
+.search-status { min-height: 1.4em; margin: 8px 0 0 !important; color: #d5e4f6 !important; font-size: .82rem !important; }
+
+.portal-grid, .cards-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+.portal-card, .card {
+  position: relative; display: flex; flex-direction: column; min-width: 0; overflow: hidden;
+  background: linear-gradient(155deg, #fff 0%, #f4f8fd 100%); color: var(--ink);
+  border: 1px solid #d8e4f1; border-radius: 17px; box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.portal-card { padding: 22px; border-top: 4px solid var(--accent, var(--blue)); }
+.portal-card:hover, .card:hover { transform: translateY(-3px); box-shadow: 0 18px 38px rgba(3, 13, 30, .22); border-color: #a8c5e8; }
+.portal-card.physics { --accent: #7544b8; }
+.portal-card.science { --accent: #087f5b; }
+.portal-card.robotics { --accent: #a36b00; }
+.card-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.area-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--icon-bg, #e8f1ff); font-size: 1.45rem; }
+.physics .area-icon { --icon-bg: #f0e8ff; }
+.science .area-icon { --icon-bg: #e2f7ef; }
+.robotics .area-icon { --icon-bg: #fff2d6; }
+.area-label { color: var(--accent, var(--blue)); font-size: .7rem; font-weight: 800; letter-spacing: .12em; }
+.portal-card h2 { margin: 0 0 8px; color: #162b48; font: 700 1.28rem/1.25 'Space Grotesk', sans-serif; }
+.portal-card p { margin: 0 0 16px; color: #405570; font-size: .91rem; line-height: 1.55; }
+.tag-list, .badge-container { display: flex; flex-wrap: wrap; gap: 6px; margin: auto 0 17px; }
+.tag-list span, .badge { display: inline-flex; align-items: center; padding: 4px 8px; border-radius: 6px; background: #e8eff8; border: 1px solid #d3dfed; color: #334a66; font-size: .7rem; line-height: 1.35; font-weight: 700; }
+.btn-action {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 43px;
+  padding: 10px 13px; border: 1px solid #1d4ed8; border-radius: 10px; background: #1d4ed8; color: #fff;
+  text-decoration: none; text-align: center; font-size: .88rem; font-weight: 700; line-height: 1.35; cursor: pointer;
+  transition: background .18s, box-shadow .18s, transform .18s;
+}
+.btn-action:hover { background: #163eae; box-shadow: 0 5px 14px rgba(29, 78, 216, .22); }
+.btn-action:focus-visible, .btn-search:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+.btn-secondary { background: #fff; color: #263d5a; border-color: #b9c9dc; }
+.btn-secondary:hover { background: #eaf1fa; box-shadow: none; }
+.empty-state { margin: 20px 0 0; padding: 18px; border: 1px dashed #d9e6f5; border-radius: 12px; background: rgba(255,255,255,.96); color: #344b66; text-align: center; }
+
+/* Catálogo de Física */
+.catalog-page .main-content { padding-top: 34px; }
+.catalog-page .hero-section { max-width: 900px; margin-bottom: 22px; }
+.catalog-page .hero-section h1 { font-size: clamp(1.9rem, 4vw, 2.7rem); }
+.catalog-page .hero-section > p { font-size: .96rem; }
+.catalog-page .search-box { max-width: 760px; }
+.catalog-page .cards-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.catalog-page .card { padding: 19px; border-top: 4px solid #3976c5; border-radius: 15px; }
+.catalog-page .card-header-inline { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+.catalog-page .card-icon { flex: 0 0 42px; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 11px; background: #e6efff; color: #214f91; font-size: 1.35rem; }
+.catalog-page .badge { margin-bottom: 3px; }
+.catalog-page .card h2, .catalog-page .card h3 { margin: 0; color: #172f50; font: 700 1.05rem/1.3 'Space Grotesk', sans-serif; }
+.catalog-page .card .card-body { display: flex; flex-direction: column; flex: 1; }
+.catalog-page .card p { margin: 0 0 14px; color: #3e536e; font-size: .86rem; line-height: 1.55; }
+.catalog-page .badge-container { gap: 5px; margin: auto 0 14px; }
+.catalog-page .badge { font-size: .66rem; padding: 4px 7px; }
+.catalog-page .btn-action { margin-top: auto; min-height: 40px; padding: 9px 11px; font-size: .82rem; }
+.catalog-page .btn-action:disabled { color: #5e6d7f; background: #e9eef4; border-color: #d4dde7; cursor: not-allowed; box-shadow: none; }
+.catalog-page .search-status { color: #d5e4f6 !important; }
+.catalog-page .footer-bar { margin-top: 26px; }
+
+.footer-bar { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; padding: 22px 18px; border-top: 1px solid rgba(219, 234, 254, .2); color: #d1deee; font-size: .8rem; text-align: center; }
+
+@media (max-width: 900px) {
+  .portal-grid, .catalog-page .cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .main-header { padding-inline: 22px; }
+  .tagline { max-width: 45%; text-align: right; font-size: .7rem; }
+}
+@media (max-width: 600px) {
+  .main-header { align-items: flex-start; flex-direction: column; gap: 12px; padding: 16px 18px; }
+  .tagline { max-width: none; text-align: left; font-size: .67rem; letter-spacing: .07em; }
+  .main-content { width: min(100% - 26px, 480px); padding-top: 30px; }
+  .hero-section { margin-bottom: 22px; }
+  .hero-section > p { font-size: .93rem; }
+  .search-box { gap: 6px; padding: 5px; border-radius: 12px; }
+  .search-icon { padding-left: 7px; }
+  .search-box input { font-size: .86rem; }
+  .btn-search { padding: 10px 12px; font-size: .84rem; }
+  .portal-grid, .catalog-page .cards-grid { grid-template-columns: 1fr; gap: 13px; }
+  .portal-card, .catalog-page .card { padding: 18px; }
+  .portal-card h2 { font-size: 1.2rem; }
+  .footer-bar { flex-direction: column; gap: 4px; }
+}
+
+
+/* AJUSTES DE REVISÃO — CATÁLOGO DE FÍSICA */
+.catalog-page .main-content { width: min(1240px, calc(100% - 40px)); margin-inline: auto; padding-bottom: 24px; }
+.catalog-page .hero-section { position: relative; z-index: 0; margin-bottom: 28px; }
+.catalog-page .cards-grid { align-items: stretch; gap: 18px; margin: 0 0 28px; }
+.catalog-page .card { min-width: 0; min-height: 0; height: 100%; display: flex; flex-direction: column; overflow: visible; }
+.catalog-page .card-header-inline > div:last-child { min-width: 0; flex: 1; }
+.catalog-page .card h3 { font-size: clamp(1rem, 1.15vw, 1.12rem); line-height: 1.35; overflow-wrap: anywhere; }
+.catalog-page .card p { font-size: .9rem; line-height: 1.65; overflow-wrap: anywhere; }
+.catalog-page .card .card-body { flex: 1; min-width: 0; }
+.catalog-page .badge-container { align-items: flex-start; }
+.catalog-page .badge { white-space: normal; overflow-wrap: anywhere; }
+.catalog-page .card-icon { flex-shrink: 0; }
+.catalog-page .catalog-back { display: flex; justify-content: center; clear: both; position: relative; z-index: 1; margin: 8px 0 20px; }
+.catalog-page .catalog-back .btn-action { width: auto; min-width: 250px; max-width: 100%; }
+.catalog-page .search-status { color: #e7effa !important; }
+@media (max-width: 600px) { .catalog-page .main-content { width: calc(100% - 24px); } .catalog-page .catalog-back .btn-action { width: 100%; } }
+
+
+/* AJUSTE DE IDENTIDADE VISUAL — CARTÃO EXCLUSIVO DA TRILHA EJA */
+.catalog-page .card.eja-feature-card {
+  background: linear-gradient(145deg, #eaf7ff 0%, #d8efff 52%, #e8f4ff 100%);
+  border: 1px solid #75bde8;
+  border-top: 5px solid #087eaa;
+  box-shadow: 0 9px 24px rgba(5, 83, 130, .14);
+}
+.catalog-page .card.eja-feature-card .card-icon {
+  background: linear-gradient(145deg, #0b6e9f, #1649a0);
+  color: #fff;
+}
+.catalog-page .card.eja-feature-card .badge {
+  background: #d3eaff;
+  border-color: #a7d4f4;
+  color: #164a75;
+}
+.catalog-page .card.eja-feature-card h3 { color: #083b63; }
+.catalog-page .card.eja-feature-card p { color: #244d6a; }
+.catalog-page .card.eja-feature-card .btn-action {
+  background: #087eaa; border-color: #087eaa; color: #fff;
+}
+.catalog-page .card.eja-feature-card .btn-action:hover { background: #075d85; }
+.catalog-page .cards-grid { margin-bottom: 42px; }
+.catalog-page .catalog-back { margin-top: 30px; margin-bottom: 26px; }
+.catalog-page .catalog-back .btn-action { min-height: 46px; }
+@media (max-width: 600px) {
+  .catalog-page .cards-grid { margin-bottom: 32px; }
+  .catalog-page .catalog-back { margin-top: 22px; }
+}
+
+
+/* ANDRELAB — identidade visual oficial com a nova logomarca */
+.brand-mark { overflow: hidden; padding: 0; border: 1px solid rgba(87, 214, 255, .65); background: #07152d; box-shadow: 0 0 0 3px rgba(0, 205, 255, .08), 0 6px 22px rgba(0, 160, 255, .24); }
+.brand-mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.home-hero { position: relative; padding-top: 6px; }
+.hero-logo { display: block; width: clamp(150px, 20vw, 218px); height: auto; aspect-ratio: 1; object-fit: contain; margin: 0 auto 8px; border-radius: 22px; filter: drop-shadow(0 14px 28px rgba(0, 174, 255, .20)); }
+.catalog-hero { display: grid; justify-items: center; }
+.catalog-logo { display: block; width: clamp(94px, 12vw, 132px); height: auto; aspect-ratio: 1; object-fit: contain; margin: 0 auto 6px; border-radius: 16px; filter: drop-shadow(0 8px 18px rgba(0, 174, 255, .16)); }
+.main-header { background: linear-gradient(105deg, rgba(5, 16, 37, .98), rgba(13, 35, 72, .96) 58%, rgba(7, 24, 50, .98)); border-bottom-color: rgba(0, 210, 255, .28); }
+.brand-copy strong { color: #f5fbff; }
+.brand-copy small { color: #63e4ff; }
+@media (max-width: 600px) { .main-header { gap: 12px; padding: 12px 16px; } .brand { gap: 9px; } .brand-mark { width: 42px; height: 42px; flex: 0 0 42px; } .brand-copy strong { font-size: 1.25rem; } .brand-copy small { font-size: .56rem; letter-spacing: .11em; } .tagline { max-width: 42%; text-align: right; font-size: .65rem; } .hero-logo { width: 158px; } .catalog-logo { width: 104px; } }

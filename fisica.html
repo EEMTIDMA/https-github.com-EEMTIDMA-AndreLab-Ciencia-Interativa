@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-page="catalogo-fisica" data-search-label="aula" data-search-plural="aulas">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#13213a">
+  <meta name="description" content="Catálogo de aulas interativas de Física do AndreLab — Ciência Interativa.">
+  <title>AndreLab | Catálogo de Física</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/png" href="assets/logo-andrelab.png">
+</head>
+<body class="catalog-page">
+  <header class="main-header">
+    <a class="brand" href="index.html" aria-label="Voltar ao AndreLab">
+      <span class="brand-mark" aria-hidden="true"><img src="assets/logo-andrelab.png" alt=""></span>
+      <span class="brand-copy"><strong>AndreLab</strong><small>CIÊNCIA INTERATIVA</small></span>
+    </a>
+    <p class="tagline">Física · Aprender investigando</p>
+  </header>
+
+  <main class="main-content">
+    <section class="hero-section catalog-hero" aria-labelledby="catalog-title">
+      <img class="catalog-logo" src="assets/logo-andrelab.png" alt="AndreLab — Ciência, Física, Robótica e EJA" width="120" height="120">
+      <span class="eyebrow">LABORATÓRIO VIRTUAL</span>
+      <h1 id="catalog-title">Catálogo de <span>Física</span></h1>
+      <p>Escolha uma aula para explorar conceitos, experimentar simulações e testar seus conhecimentos.</p>
+      <form class="search-box" id="buscaAulas" role="search">
+        <label class="sr-only" for="inputBusca">Buscar aulas de Física</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="inputBusca" name="q" type="search" placeholder="Ex.: dinâmica, Newton, gravitação..." autocomplete="off">
+        <button class="btn-search" type="submit">Buscar aulas</button>
+      </form>
+      <p id="mensagemBusca" class="search-status" role="status" aria-live="polite">Carregando aulas...</p>
+    </section>
+
+    <section id="listaCards" class="cards-grid" aria-label="Aulas disponíveis de Física">
+      <article class="card physics eja-feature-card" data-search="aula 01 física eja eta 01 primeiro ano cinemática movimento velocidade aceleração mru mruv mcu queda livre lançamento horizontal lançamento oblíquo período frequência quiz gamificado">
+        <div class="card-header-inline">
+          <div class="card-icon" aria-hidden="true">➜</div>
+          <div><span class="badge">FÍSICA EJA · ETA 01</span><h3>Aula 01: Cinemática — movimentos</h3></div>
+        </div>
+        <div class="card-body">
+          <p>Conteúdo organizado em três encontros: explanação em duas partes, exemplos resolvidos e avaliação gamificada com cinco alternativas por questão.</p>
+          <div class="badge-container"><span class="badge">1º ano</span><span class="badge">3 encontros</span><span class="badge">Simulações</span><span class="badge">Quiz A–E</span></div>
+          <a class="btn-action" href="aula01-eja-eta01.html">Explorar aula <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card physics" data-search="dinâmica 1 forças movimento aristóteles galileu newton força velocidade direção deformação interação aula 01">
+        <div class="card-header-inline">
+          <div class="card-icon" aria-hidden="true">↗</div>
+          <div><span class="badge">AULA 01 · DINÂMICA</span><h3>Forças e movimento</h3></div>
+        </div>
+        <div class="card-body">
+          <p>Investigue as ideias de Aristóteles, Galileu e Newton e observe como as forças podem alterar o movimento e a forma dos corpos.</p>
+          <div class="badge-container"><span class="badge">Simulação 3D</span><span class="badge">Experimentos</span><span class="badge">Desafio final</span></div>
+          <a class="btn-action" href="dinamica-aula01.html">Explorar aula <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card physics" data-search="dinâmica 2 três leis de newton inércia força resultante massa aceleração peso ação reação aula 02">
+        <div class="card-header-inline">
+          <div class="card-icon" aria-hidden="true">⚙</div>
+          <div><span class="badge">AULA 02 · DINÂMICA</span><h3>As três Leis de Newton</h3></div>
+        </div>
+        <div class="card-body">
+          <p>Explore a inércia, a relação entre força resultante, massa e aceleração, a força peso e os pares de ação e reação.</p>
+          <div class="badge-container"><span class="badge">Simulação 3D</span><span class="badge">Experimento interativo</span><span class="badge">Desafio final</span></div>
+          <a class="btn-action" href="dinamica-aula02.html">Explorar aula <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card physics" data-search="dinâmica 3 força normal tração polias equilíbrio plano inclinado decomposição peso sistemas ideais aula 03">
+        <div class="card-header-inline">
+          <div class="card-icon" aria-hidden="true">↕</div>
+          <div><span class="badge">AULA 03 · DINÂMICA</span><h3>Força normal, tração e polias</h3></div>
+        </div>
+        <div class="card-body">
+          <p>Investigue a força normal, o plano inclinado, a tração em cordas e o funcionamento de polias em sistemas ideais.</p>
+          <div class="badge-container"><span class="badge">Diagramas</span><span class="badge">Cálculos guiados</span><span class="badge">Desafio final</span></div>
+          <a class="btn-action" href="dinamica-aula03.html">Explorar aula <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card physics" data-search="gravitação universal gravidade massa distância força gravitacional newton órbita planetas aula 04 3d">
+        <div class="card-header-inline">
+          <div class="card-icon" aria-hidden="true">✦</div>
+          <div><span class="badge">AULA 04 · GRAVITAÇÃO</span><h3>Lei da Gravitação Universal</h3></div>
+        </div>
+        <div class="card-body">
+          <p>Explore a atração gravitacional e investigue como as massas e a distância influenciam a intensidade da força.</p>
+          <div class="badge-container"><span class="badge">Simulação 3D</span><span class="badge">Investigação</span></div>
+          <a class="btn-action" href="aula.html">Explorar aula <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+
+      <article class="card physics" data-search="movimento velocidade aceleração trajetória cinemática deslocamento velocidade média futura em breve">
+        <div class="card-header-inline">
+          <div class="card-icon" aria-hidden="true">➜</div>
+          <div><span class="badge">PRÓXIMA ETAPA</span><h3>Movimento e velocidade</h3></div>
+        </div>
+        <div class="card-body">
+          <p>Futura experiência sobre trajetória, deslocamento, velocidade média e aceleração.</p>
+          <div class="badge-container"><span class="badge">Cinemática</span><span class="badge">Laboratório virtual</span></div>
+          <button class="btn-action" type="button" disabled aria-disabled="true">Em breve</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="semResultados" class="empty-state" hidden aria-live="polite">
+      <h2>Nenhuma aula encontrada</h2>
+      <p>Tente buscar por outro termo, como “força”, “Newton”, “dinâmica” ou “gravitação”.</p>
+    </section>
+
+    <nav class="catalog-back" aria-label="Navegação do portal">
+      <a class="btn-action btn-secondary" href="index.html"><span aria-hidden="true">←</span> Voltar ao portal principal</a>
+    </nav>
+  </main>
+
+  <footer class="footer-bar">
+    <span>AndreLab · Ciência Interativa</span>
+    <span>Desenvolvido por Prof. Carlos André</span>
+    <span>© <span id="anoAtual"></span></span>
+  </footer>
+</body>
+</html>

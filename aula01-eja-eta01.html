@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050816">
+<meta name="description" content="Aula interativa de Física para EJA — ETA 01, 1º ano. Cinemática: MRU, MRUV, lançamentos e movimento circular uniforme.">
+<title>AndreLab | Física EJA ETA 01 — Aula 01: Cinemática</title>
+<link rel="stylesheet" href="aula01-eja-eta01.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"}}</script>
+<script type="module" src="aula01-eja-eta01.js"></script>
+</head>
+<body>
+<div class="space-glow glow-one"></div><div class="space-glow glow-two"></div>
+<header class="app-header">
+  <a class="brand" href="index.html" aria-label="Voltar ao AndreLab"><span class="brand-mark">A<span>✦</span></span><span><strong>AndreLab</strong><small>CIÊNCIA INTERATIVA</small></span></a>
+  <div class="module-info"><span class="eyebrow">FÍSICA EJA · ETA 01 · 1º ANO</span><h1>Cinemática <span>01</span></h1></div>
+  <a class="back-button" href="fisica.html">← Catálogo de Física</a>
+</header>
+<main class="app-main">
+<section class="lesson-heading">
+  <div><p class="eyebrow">TRILHA DE APRENDIZAGEM · AULA 01</p><h2>Como descrever e compreender os movimentos?</h2>
+  <p class="lesson-subtitle">Da velocidade no cotidiano aos movimentos acelerados e circulares. Observe, simule, calcule e relacione a Física às situações reais.</p></div>
+  <div class="lesson-status"><span class="status-dot"></span><span id="status3D">Preparando laboratório interativo…</span></div>
+</section>
+<section class="lesson-shell" aria-label="Aula interativa de Cinemática para EJA organizada em três encontros">
+<aside class="lesson-sidebar">
+  <p class="sidebar-title">ROTEIRO DA AULA · 3 ENCONTROS</p>
+  <p class="encounter-label">ENCONTRO 1 · EXPLANAÇÃO — PARTE 1</p>
+  <button class="step-link active" data-goto="1"><span class="step-number">01</span><span><strong>Movimento e velocidade</strong><small>Referencial e conceitos básicos</small></span></button>
+  <button class="step-link" data-goto="2"><span class="step-number">02</span><span><strong>Movimento uniforme</strong><small>MRU e função horária</small></span></button>
+  <p class="encounter-label">ENCONTRO 2 · EXPLANAÇÃO — PARTE 2</p>
+  <button class="step-link" data-goto="3"><span class="step-number">03</span><span><strong>Movimento acelerado</strong><small>MRUV e equações</small></span></button>
+  <button class="step-link" data-goto="4"><span class="step-number">04</span><span><strong>Gráficos e lançamentos</strong><small>Queda livre e projéteis</small></span></button>
+  <button class="step-link" data-goto="5"><span class="step-number">05</span><span><strong>Movimento circular</strong><small>Período, frequência e aceleração</small></span></button>
+  <p class="encounter-label">ENCONTRO 3 · EXEMPLOS E AVALIAÇÃO</p>
+  <button class="step-link" data-goto="6"><span class="step-number">06</span><span><strong>Desafio final</strong><small>Aplicação e avaliação</small></span></button>
+  <div class="sidebar-tip"><span>✦</span><p><strong>Missão científica</strong><br>Observe o movimento, faça uma previsão, teste no laboratório e explique o resultado usando conceitos físicos.</p></div>
+</aside>
+<div class="lesson-content">
+<section class="slide active" id="screen1">
+  <div class="slide-kicker">ENCONTRO 1 · EXPLANAÇÃO DO CONTEÚDO · PARTE 1</div><h2>O que significa estar em movimento?</h2>
+  <p class="lead">A Cinemática descreve os movimentos sem investigar, nesta etapa, suas causas. Para dizer se um corpo está em movimento ou em repouso, precisamos escolher um <strong>referencial</strong>. A posição pode mudar com o tempo; a trajetória é o conjunto das posições ocupadas pelo corpo.</p>
+  <div class="scene-frame"><div class="scene-topline"><span>LABORATÓRIO INTERATIVO 3D</span><span class="scene-chip">MOVIMENTO</span></div><div class="scene-slot" id="sceneSlot1"><div class="scene-loading"><span class="loader"></span>Preparando pista e veículo…</div></div><div class="scene-caption"><strong>Observe o veículo em movimento</strong><p>Inicie e pause o percurso. A posição muda com o tempo; a rapidez informa quanto espaço é percorrido por unidade de tempo.</p><div class="simulator-actions"><button class="simulator-action" id="runCar" type="button">▶ Iniciar movimento</button><button class="simulator-action" id="pauseCar" type="button">Ⅱ Pausar</button><button class="simulator-action" id="resetCar" type="button">↻ Reiniciar</button></div></div></div>
+  <section class="external-sim-panel" aria-labelledby="movingManTitle">
+    <div class="external-sim-heading"><div><span class="eyebrow">SIMULAÇÃO EXTERNA · VELOCIDADE</span><h3 id="movingManTitle">O Homem em Movimento — PhET</h3><p>Experimente alterar a posição e a velocidade e observe como o movimento muda com o tempo.</p></div><a class="simulator-fallback" href="https://phet.colorado.edu/sims/cheerpj/moving-man/latest/moving-man.html?simulation=moving-man&amp;locale=pt_BR" target="_blank" rel="noopener noreferrer">Abrir simulação em nova aba ↗</a></div>
+    <div class="external-sim-window"><iframe title="PhET — O Homem em Movimento" src="https://phet.colorado.edu/sims/cheerpj/moving-man/latest/moving-man.html?simulation=moving-man&amp;locale=pt_BR" loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <p class="external-sim-note">Se a simulação não carregar nesta janela, use o botão para abri-la diretamente no site PhET.</p>
+  </section>
+  <div class="concept-grid"><article class="concept-card"><div class="concept-icon cyan">x</div><h3>Posição e referencial</h3><p>A posição indica onde o corpo está em relação a uma origem escolhida. Um passageiro pode estar parado em relação ao ônibus e em movimento em relação à rua.</p></article><article class="concept-card"><div class="concept-icon pink">Δs</div><h3>Deslocamento</h3><p>É a variação da posição entre o instante final e o inicial: Δs = s − s₀. Não deve ser confundido com o comprimento total do caminho percorrido.</p></article><article class="concept-card"><div class="concept-icon green">vₘ</div><h3>Velocidade escalar média</h3><p>Calculamos dividindo a variação da posição pelo intervalo de tempo: vₘ = Δs/Δt. No SI, usamos metros por segundo (m/s).</p></article></div>
+  <div class="callout"><strong>Conexão com o cotidiano</strong><p>Se um veículo percorre 120 km em 2 h, sua velocidade escalar média é 60 km/h. Isso não significa que ele manteve exatamente essa velocidade durante todo o trajeto.</p></div>
+  <div class="question-card"><h3>Pare e pense</h3><p>Uma pessoa está sentada em um ônibus que se desloca pela avenida. Em relação a quais referenciais ela está em repouso e em movimento?</p><label for="reflection1">Sua explicação</label><textarea id="reflection1" rows="2" placeholder="Escreva sua hipótese com suas palavras…"></textarea></div>
+</section>
+<section class="slide" id="screen2" hidden>
+  <div class="slide-kicker">ENCONTRO 1 · EXPLANAÇÃO DO CONTEÚDO · PARTE 1</div><h2>MRU: velocidade constante</h2>
+  <p class="lead">No Movimento Retilíneo Uniforme (MRU), a trajetória é reta e a velocidade escalar é constante. Em intervalos de tempo iguais, o corpo percorre deslocamentos iguais. A aceleração é nula no modelo ideal.</p>
+  <div class="formula-card"><span class="formula-label">FUNÇÃO HORÁRIA DA POSIÇÃO</span><div class="big-formula">s = s₀ + v · t</div><p><strong>s</strong>: posição final · <strong>s₀</strong>: posição inicial · <strong>v</strong>: velocidade constante · <strong>t</strong>: tempo</p></div>
+  <div class="control-panel">
+    <div class="control-heading"><div><span class="eyebrow">SIMULADOR MRU</span><h3>Altere a velocidade do veículo</h3></div><output id="mruSpeedValue">10 m/s</output></div>
+    <input id="mruSpeed" type="range" min="1" max="20" value="10" step="1" aria-label="Velocidade no MRU em metros por segundo">
+    <div class="range-labels"><span>1 m/s</span><span>20 m/s</span></div>
+    <div class="control-heading"><div><span class="eyebrow">TEMPO DECORRIDO</span><h3>Tempo de observação</h3></div><output id="mruTimeValue">5 s</output></div>
+    <input id="mruTime" type="range" min="1" max="10" value="5" step="1" aria-label="Tempo de observação em segundos">
+    <div class="range-labels"><span>1 s</span><span>10 s</span></div>
+    <div class="experiment-actions"><button class="primary-button" id="calcMRU">Calcular posição</button><button class="secondary-button" id="resetMRU">Restaurar valores</button></div>
+    <p id="mruResult" class="control-feedback" aria-live="polite">s = 0 m + 10 m/s × 5 s = 50 m.</p>
+  </div>
+  <div class="concept-grid two"><article class="concept-card"><div class="concept-icon cyan">v &gt; 0</div><h3>Sentido positivo</h3><p>Quando a velocidade é positiva, a posição aumenta com o tempo, considerando a orientação escolhida para o eixo.</p></article><article class="concept-card"><div class="concept-icon pink">v &lt; 0</div><h3>Sentido negativo</h3><p>Quando a velocidade é negativa, a posição diminui com o tempo em relação à orientação escolhida. O sinal depende do referencial.</p></article></div>
+  <div class="question-card"><h3>Aplicação prática</h3><p>Um ciclista está na posição 20 m e se desloca com velocidade constante de 4 m/s. Qual será sua posição após 6 s?</p><div class="radio-list"><label><input type="radio" name="mruQ" value="24"> 24 m</label><label><input type="radio" name="mruQ" value="44"> 44 m</label><label><input type="radio" name="mruQ" value="120"> 120 m</label></div><button class="secondary-button" id="checkMRU">Conferir resposta</button><p id="mruQuizFeedback" class="control-feedback" aria-live="polite"></p></div>
+</section>
+<section class="slide" id="screen3" hidden>
+  <div class="slide-kicker">ENCONTRO 2 · CONCLUSÃO DA EXPLANAÇÃO · PARTE 2</div><h2>MRUV: quando a velocidade muda</h2>
+  <p class="lead">No Movimento Retilíneo Uniformemente Variado (MRUV), a trajetória é reta e a aceleração escalar é constante. A velocidade varia de maneira uniforme ao longo do tempo. O movimento pode ser acelerado quando o módulo da velocidade aumenta ou retardado quando diminui.</p>
+  <div class="formula-grid"><div class="formula-card"><span class="formula-label">ACELERAÇÃO MÉDIA</span><div class="big-formula">a = Δv / Δt</div><p>Variação da velocidade dividida pelo intervalo de tempo.</p></div><div class="formula-card"><span class="formula-label">VELOCIDADE NO MRUV</span><div class="big-formula">v = v₀ + a · t</div><p>Relaciona velocidade inicial, aceleração e tempo.</p></div><div class="formula-card"><span class="formula-label">POSIÇÃO NO MRUV</span><div class="big-formula">s = s₀ + v₀t + at²/2</div><p>Relaciona posição, velocidade inicial, aceleração e tempo.</p></div><div class="formula-card"><span class="formula-label">EQUAÇÃO DE TORRICELLI</span><div class="big-formula">v² = v₀² + 2aΔs</div><p>Relaciona velocidades, aceleração e deslocamento sem usar o tempo diretamente.</p></div></div>
+  <div class="control-panel">
+    <div class="control-heading"><div><span class="eyebrow">LABORATÓRIO MRUV</span><h3>Investigue a aceleração</h3></div><output id="accelValue">2 m/s²</output></div>
+    <input id="accelSlider" type="range" min="-3" max="3" value="2" step="0.5" aria-label="Aceleração em metros por segundo ao quadrado">
+    <div class="range-labels"><span>−3 m/s²</span><span>+3 m/s²</span></div>
+    <div class="control-heading"><div><span class="eyebrow">TEMPO</span><h3>Tempo decorrido</h3></div><output id="accelTimeValue">4 s</output></div>
+    <input id="accelTime" type="range" min="1" max="8" value="4" step="1" aria-label="Tempo decorrido em segundos">
+    <div class="range-labels"><span>1 s</span><span>8 s</span></div>
+    <div class="experiment-actions"><button class="primary-button" id="calcMRUV">Calcular velocidade</button><button class="secondary-button" id="resetMRUV">Restaurar valores</button></div>
+    <p id="mruvResult" class="control-feedback" aria-live="polite">Com v₀ = 0, v = 0 + 2 × 4 = 8 m/s.</p>
+  </div>
+  <section class="external-sim-panel" aria-labelledby="mruvExternalTitle">
+    <div class="external-sim-heading"><div><span class="eyebrow">SIMULAÇÃO EXTERNA · MRU E MRUV</span><h3 id="mruvExternalTitle">Movimento retilíneo — SimuFísica</h3><p>Configure posição inicial, velocidade e aceleração. Compare os movimentos e acompanhe as variáveis ao longo do tempo.</p></div><a class="simulator-fallback" href="https://simufisica.com/simulacoes/movimento-retilineo/" target="_blank" rel="noopener noreferrer">Abrir SimuFísica ↗</a></div>
+    <div class="external-sim-window external-sim-window-tall"><iframe title="SimuFísica — simulador de movimento retilíneo MRU e MRUV" src="https://simufisica.com/simulacoes/movimento-retilineo/" loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <p class="external-sim-note">O simulador permite explorar MRU e MRUV, inclusive com aceleração constante e comparação entre partículas. Se o site bloquear a incorporação, abra-o em uma nova aba.</p>
+  </section>
+  <div class="callout"><strong>Atenção aos sinais</strong><p>O sinal da velocidade indica seu sentido em relação ao eixo. O sinal da aceleração indica seu sentido. Para saber se o módulo da velocidade aumenta ou diminui, compare os sinais de v e a.</p></div>
+</section>
+<section class="slide" id="screen4" hidden>
+  <div class="slide-kicker">ENCONTRO 2 · CONCLUSÃO DA EXPLANAÇÃO · PARTE 2</div><h2>Como ler os gráficos e entender os lançamentos?</h2>
+  <p class="lead">Os gráficos mostram como posição, velocidade e aceleração variam com o tempo. No MRU, o gráfico posição × tempo é uma reta cuja inclinação representa a velocidade. No MRUV, o gráfico velocidade × tempo é uma reta cuja inclinação representa a aceleração.</p>
+  <div class="graph-grid"><article class="concept-card"><h3>MRU · posição × tempo</h3><canvas id="graphMRU" class="physics-graph" width="600" height="280" aria-label="Gráfico posição por tempo no MRU"></canvas><p>Reta inclinada: posição muda de modo uniforme. A inclinação indica a velocidade.</p></article><article class="concept-card"><h3>MRUV · velocidade × tempo</h3><canvas id="graphMRUV" class="physics-graph" width="600" height="280" aria-label="Gráfico velocidade por tempo no MRUV"></canvas><p>A inclinação da reta indica a aceleração. A área algébrica sob o gráfico v × t corresponde ao deslocamento.</p></article></div>
+  <div class="concept-grid"><article class="concept-card"><div class="concept-icon cyan">g</div><h3>Queda livre</h3><p>É o movimento sob ação exclusiva da gravidade, desprezando a resistência do ar. Próximo à superfície terrestre, usa-se frequentemente g ≈ 9,8 m/s² ou, em exercícios aproximados, 10 m/s².</p></article><article class="concept-card"><div class="concept-icon pink">→</div><h3>Lançamento horizontal</h3><p>O movimento horizontal é uniforme no modelo ideal, enquanto o movimento vertical é uniformemente variado pela gravidade. As duas componentes são analisadas separadamente.</p></article><article class="concept-card"><div class="concept-icon green">↗</div><h3>Lançamento oblíquo</h3><p>A velocidade inicial é decomposta em componentes horizontal e vertical. Desprezando o ar, a componente horizontal permanece constante e a vertical varia pela gravidade.</p></article></div>
+  <div class="callout"><strong>Conexão com a vida real</strong><p>Uma bola lançada para a frente e uma gota que cai podem ter movimentos diferentes, mas a análise por componentes permite estudar cada direção separadamente.</p></div>
+</section>
+<section class="slide" id="screen5" hidden>
+  <div class="slide-kicker">ENCONTRO 2 · CONCLUSÃO DA EXPLANAÇÃO · PARTE 2</div><h2>Quando o movimento acontece em uma curva?</h2>
+  <p class="lead">No Movimento Circular Uniforme (MCU), o corpo percorre uma circunferência com módulo da velocidade escalar constante. A direção do vetor velocidade muda continuamente; por isso, existe aceleração centrípeta apontando para o centro da trajetória.</p>
+  <div class="scene-frame"><div class="scene-topline"><span>MODELO INTERATIVO · MCU</span><span class="scene-chip">TRAJETÓRIA CIRCULAR</span></div><div class="scene-slot scene-slot-short" id="circleSlot"><div class="scene-loading"><span class="loader"></span>Montando trajetória circular…</div></div><div class="scene-caption"><strong>Observe a mudança de direção</strong><p>Mesmo que o módulo da velocidade seja constante, a direção muda durante a volta. A aceleração centrípeta aponta para o centro.</p><div class="simulator-actions"><button class="simulator-action" id="toggleCircle">Ⅱ Pausar rotação</button><button class="simulator-action" id="resetCircle">↻ Reiniciar</button></div></div></div>
+  <section class="external-sim-panel mcu-external-panel" aria-labelledby="mcuExternalTitle">
+    <div class="external-sim-heading"><div><span class="eyebrow">SIMULAÇÃO EXTERNA · MCU</span><h3 id="mcuExternalTitle">Movimento circular uniforme — Physics at School</h3><p>Observe a trajetória circular e relacione a rotação ao período e à frequência.</p></div><a class="simulator-fallback" href="https://www.vascak.cz/data/android/physicsatschool/template.php?s=mech_kruznice&amp;l=en" target="_blank" rel="noopener noreferrer">Abrir simulação MCU ↗</a></div>
+    <div class="external-sim-window external-sim-window-mcu"><iframe title="Physics at School — movimento circular uniforme" src="https://www.vascak.cz/data/android/physicsatschool/template.php?s=mech_kruznice&amp;l=en" loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <p class="external-sim-note">Alternativa para instalação no computador: <a href="https://simfi.itch.io/movimento-circular" target="_blank" rel="noopener noreferrer">Movimento Circular — SimFi (Windows/Linux)</a>. O site informa que essa versão é baixável, não uma simulação executada diretamente no navegador.</p>
+  </section>
+  <div class="formula-grid"><div class="formula-card"><span class="formula-label">PERÍODO</span><div class="big-formula">T = tempo / voltas</div><p>Tempo necessário para completar uma volta.</p></div><div class="formula-card"><span class="formula-label">FREQUÊNCIA</span><div class="big-formula">f = 1 / T</div><p>Número de voltas por unidade de tempo; no SI, hertz (Hz).</p></div><div class="formula-card"><span class="formula-label">VELOCIDADE ANGULAR</span><div class="big-formula">ω = 2π / T</div><p>Taxa de variação do deslocamento angular.</p></div><div class="formula-card"><span class="formula-label">ACELERAÇÃO CENTRÍPETA</span><div class="big-formula">a꜀ = v² / R</div><p>Aponta para o centro da trajetória circular.</p></div></div>
+  <div class="control-panel"><div class="control-heading"><div><span class="eyebrow">CALCULADORA MCU</span><h3>Altere o raio da trajetória</h3></div><output id="radiusValue">2 m</output></div><input id="radiusSlider" type="range" min="1" max="10" value="2" step="1" aria-label="Raio da trajetória circular em metros"><div class="range-labels"><span>1 m</span><span>10 m</span></div><div class="control-heading" style="margin-top:20px"><div><span class="eyebrow">PERÍODO</span><h3>Tempo de uma volta</h3></div><output id="periodValue">4 s</output></div><input id="periodSlider" type="range" min="1" max="10" value="4" step="1" aria-label="Período em segundos"><div class="range-labels"><span>1 s</span><span>10 s</span></div><p class="control-feedback" id="circleResult" aria-live="polite">f = 0,25 Hz · ω ≈ 1,57 rad/s.</p></div>
+  <div class="concept-grid two"><article class="concept-card"><h3>Exemplos de MCU</h3><p>Um ponto da borda de um ventilador que gira com rotação constante ou um ponto de uma roda girando são exemplos aproximados de movimento circular uniforme.</p></article><article class="concept-card"><h3>Transmissão de movimento</h3><p>Em polias ligadas por correia sem deslizamento, os pontos das bordas têm a mesma velocidade linear; em engrenagens acopladas, os dentes transmitem o movimento entre rodas.</p></article></div>
+</section>
+<section class="slide" id="screen6" hidden>
+  <div class="slide-kicker">ENCONTRO 3 · APLICAÇÃO DE EXEMPLOS E AVALIAÇÃO</div><h2>Exemplos resolvidos e avaliação</h2>
+  <p class="lead">Neste terceiro encontro, revise as fórmulas com exemplos resolvidos passo a passo. Depois, responda à avaliação individual para demonstrar o que aprendeu nos dois encontros de explanação.</p>
+  <div class="application-intro"><strong>Roteiro do Encontro 3</strong><ol><li>Retomada dos conceitos e das fórmulas essenciais.</li><li>Resolução orientada de exemplos de MRU, MRUV e MCU.</li><li>Exercícios de fixação e avaliação individual.</li></ol></div>
+  <div class="worked-examples"><article class="worked-example"><span>EXEMPLO 1 · MRU</span><h3>Viagem de ônibus</h3><p>Um ônibus percorre 150 km em 3 h, com velocidade média constante no exemplo. Calcule a velocidade média.</p><p class="worked-calculation">vₘ = Δs ÷ Δt = 150 ÷ 3 = <strong>50 km/h</strong></p><small>Estratégia: identifique o deslocamento e divida pelo tempo gasto.</small></article><article class="worked-example"><span>EXEMPLO 2 · MRUV</span><h3>Veículo acelerando</h3><p>Um veículo parte do repouso e mantém aceleração de 2 m/s² durante 4 s. Qual é sua velocidade final?</p><p class="worked-calculation">v = v₀ + at = 0 + 2 × 4 = <strong>8 m/s</strong></p><small>Estratégia: use a velocidade inicial, a aceleração e o tempo na equação.</small></article><article class="worked-example"><span>EXEMPLO 3 · MCU</span><h3>Roda girando</h3><p>Um ponto de uma roda completa uma volta a cada 2 s. Determine a frequência.</p><p class="worked-calculation">f = 1 ÷ T = 1 ÷ 2 = <strong>0,5 Hz</strong></p><small>Estratégia: o período é o tempo de uma volta; a frequência é seu inverso.</small></article></div>
+  <h3 class="assessment-heading">Desafio final: missão Cinemática</h3><p class="assessment-note">Quiz gamificado com 5 missões e cinco alternativas (A–E) por questão. Registre suas escolhas, acompanhe a evolução e conquiste XP. O gabarito e as justificativas só aparecem depois de finalizar todas as missões.</p>
+  <div class="quiz-game-panel"><div class="quiz-game-header"><div><span class="quiz-level">CENTRAL DE MISSÕES</span><h3>Trilha do conhecimento</h3><p>Uma resposta registrada por missão. Sem pistas sobre acertos antes do encerramento.</p></div><div class="quiz-xp-box"><strong id="quizXp">0 XP</strong><span>experiência</span></div></div><div class="quiz-game-meta"><span id="quizBadge" class="quiz-badge">MISSÃO EM ANDAMENTO</span><span id="quizProgressText">Missão 1 de 5</span></div><div class="progress-track"><span id="quizProgressBar"></span></div></div>
+  <div id="quizContainer" class="quiz-container"></div>
+  <div class="quiz-actions"><button class="secondary-button" id="quizBack" disabled>← Missão anterior</button><button class="primary-button" id="quizNext" disabled>Registrar missão →</button></div>
+  <div id="quizResult" class="quiz-result" hidden></div>
+  <div class="closing-card"><span class="closing-icon">✦</span><div><h3>Você concluiu a Aula 01 · Física EJA</h3><p>Explique com suas palavras a diferença entre MRU e MRUV e dê um exemplo de movimento circular presente no cotidiano.</p></div></div>
+</section>
+<div class="slide-navigation"><button class="secondary-button" id="prevSlide" disabled>← Etapa anterior</button><div class="slide-dots" aria-label="Progresso da aula"><button class="slide-dot active" data-dot="1" aria-label="Ir para etapa 1"></button><button class="slide-dot" data-dot="2" aria-label="Ir para etapa 2"></button><button class="slide-dot" data-dot="3" aria-label="Ir para etapa 3"></button><button class="slide-dot" data-dot="4" aria-label="Ir para etapa 4"></button><button class="slide-dot" data-dot="5" aria-label="Ir para etapa 5"></button><button class="slide-dot" data-dot="6" aria-label="Ir para etapa 6"></button></div><button class="primary-button" id="nextSlide">Próxima etapa →</button></div>
+</div></section>
+</main>
+<footer class="app-footer"><span>AndreLab · Ciência Interativa</span><span>Física · EJA · ETA 01 · 1º ano</span><span><a href="fisica.html">Voltar ao catálogo</a></span></footer>
+</body></html>

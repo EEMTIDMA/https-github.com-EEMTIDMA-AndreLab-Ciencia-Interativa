@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050816">
+  <meta name="description" content="Aula interativa 3D de Dinâmica: forças, movimento e interações — AndreLab Ciência Interativa.">
+  <title>AndreLab | Dinâmica 1 — Forças e movimento</title>
+  <link rel="stylesheet" href="dinamica-aula01.css">
+  <script type="module" src="dinamica-aula01.js"></script>
+</head>
+<body>
+  <div class="space-glow glow-one"></div><div class="space-glow glow-two"></div>
+  <header class="app-header">
+    <a class="brand" href="index.html" aria-label="Voltar ao AndreLab"><span class="brand-mark">A<span>✦</span></span><span><strong>AndreLab</strong><small>CIÊNCIA INTERATIVA</small></span></a>
+    <div class="module-info"><span class="eyebrow">LABORATÓRIO DE FÍSICA · DINÂMICA 1</span><h1>Dinâmica <span>3D</span></h1></div>
+    <a class="back-button" href="fisica.html"><span aria-hidden="true">←</span> Catálogo de Física</a>
+  </header>
+
+  <main class="app-main">
+    <section class="lesson-heading">
+      <div><p class="eyebrow">TRILHA DE APRENDIZAGEM · FORÇAS E MOVIMENTO</p><h2>O que faz um objeto mudar seu movimento?</h2><p class="lesson-subtitle">Explore ideias históricas, observe forças em ação e teste suas próprias hipóteses em um laboratório tridimensional.</p></div>
+      <div class="lesson-status"><span class="status-dot"></span><span id="status3D">Preparando laboratório 3D...</span></div>
+    </section>
+
+    <section class="lesson-shell" aria-label="Aula interativa de Dinâmica">
+      <aside class="lesson-sidebar">
+        <p class="sidebar-title">ROTEIRO DA AULA</p>
+        <button class="step-link active" data-goto="1"><span class="step-number">01</span><span><strong>O enigma do movimento</strong><small>Aristóteles, Galileu e Newton</small></span></button>
+        <button class="step-link" data-goto="2"><span class="step-number">02</span><span><strong>Força e movimento</strong><small>Velocidade e direção</small></span></button>
+        <button class="step-link" data-goto="3"><span class="step-number">03</span><span><strong>Força e deformação</strong><small>Quando a forma muda</small></span></button>
+        <button class="step-link" data-goto="4"><span class="step-number">04</span><span><strong>Natureza das interações</strong><small>Contato e distância</small></span></button>
+        <button class="step-link" data-goto="5"><span class="step-number">05</span><span><strong>Laboratório investigativo</strong><small>Teste suas hipóteses</small></span></button>
+        <button class="step-link" data-goto="6"><span class="step-number">06</span><span><strong>Desafio final</strong><small>Verifique a aprendizagem</small></span></button>
+        <div class="sidebar-tip"><span>✦</span><p><strong>Missão científica</strong><br>Observe antes de responder. A Física começa com boas perguntas.</p></div>
+      </aside>
+
+      <div class="lesson-content">
+        <section class="slide active" id="screen1" aria-labelledby="title1">
+          <div class="slide-kicker">ETAPA 01 · CONTEXTO HISTÓRICO</div><h2 id="title1">O enigma do movimento</h2>
+          <p class="lead">Durante séculos, pensadores tentaram explicar por que os objetos se movem, param ou mudam de trajetória. A ciência avançou quando as ideias passaram a ser confrontadas com observações e experimentos.</p>
+          <div class="scene-frame"><div class="scene-topline"><span>MODELO TRIDIMENSIONAL</span><span class="scene-chip">Movimento sob investigação</span></div><div class="scene-slot" id="sceneSlot1"><div class="scene-loading"><span class="loader"></span>Carregando experiência 3D…</div></div><div class="scene-caption">Arraste para girar a cena · Use a roda do mouse para aproximar ou afastar.</div></div>
+          <div class="historical-grid">
+            <article class="history-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aristotle_Altemps_Inv8575.jpg" alt="Busto clássico de Aristóteles" loading="lazy"><div><span class="history-date">SÉCULO IV a.C.</span><h3>Aristóteles</h3><p>Propôs explicações sobre os movimentos naturais e forçados. Em sua visão, manter um movimento forçado exigia a ação contínua de um agente.</p><p class="history-note">Importância: uma das primeiras tentativas sistemáticas de explicar a natureza.</p></div></article>
+            <article class="history-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Galileo_Galilei_2.jpg" alt="Retrato histórico de Galileu Galilei" loading="lazy"><div><span class="history-date">1564–1642</span><h3>Galileu Galilei</h3><p>Usou observações e experiências, incluindo planos inclinados, para investigar a queda e o movimento. Suas ideias ajudaram a construir o conceito de inércia.</p><p class="history-note">Virada científica: testar explicações com evidências.</p></div></article>
+            <article class="history-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/GodfreyKneller-IsaacNewton-1689.jpg" alt="Retrato histórico de Isaac Newton" loading="lazy"><div><span class="history-date">1643–1727</span><h3>Isaac Newton</h3><p>Organizou princípios matemáticos para descrever o movimento e as forças, estabelecendo as três leis que serão aprofundadas na Dinâmica 2.</p><p class="history-note">Contribuição: relacionar forças e mudanças no movimento.</p></div></article>
+          </div>
+          <div class="callout"><strong>Ideia-chave</strong><p>A ciência não avança apenas pela autoridade de uma pessoa: ela se transforma com observações, experimentos, argumentos e novas evidências.</p></div>
+          <div class="question-card"><h3>Pause e pense</h3><p>Uma bola continua rolando depois que você para de empurrá-la. O que pode fazê-la diminuir a velocidade?</p><label for="reflection1">Sua hipótese</label><textarea id="reflection1" rows="2" placeholder="Escreva sua explicação antes de avançar..."></textarea></div>
+        </section>
+
+        <section class="slide" id="screen2" aria-labelledby="title2" hidden>
+          <div class="slide-kicker">ETAPA 02 · EFEITOS DA FORÇA</div><h2 id="title2">Uma força pode mudar o movimento</h2>
+          <p class="lead">Força é uma interação capaz de alterar o movimento de um corpo ou produzir deformação. O efeito depende da intensidade, da direção, do sentido e das demais forças que atuam no objeto.</p>
+          <div class="scene-frame"><div class="scene-topline"><span>EXPERIMENTO 3D</span><span class="scene-chip">Empurre e observe</span></div><div class="scene-slot scene-slot-short" id="sceneSlot2"><div class="scene-loading"><span class="loader"></span>Preparando objetos…</div></div><div class="scene-caption"><p>O vetor representa a força aplicada; o movimento depende da força resultante. Compare o modelo 3D com as simulações interativas externas.</p><div class="simulator-actions"><a class="simulator-action" href="https://www.vascak.cz/data/android/physicsatschool/template.php?s=mech_newton1&amp;l=pt" target="_blank" rel="noopener noreferrer">Abrir Vascak · Inércia ↗</a><a class="simulator-action" href="https://phet.colorado.edu/pt_BR/simulations/forces-and-motion-basics" target="_blank" rel="noopener noreferrer">Abrir PhET · Forças e movimento ↗</a></div></div></div>
+          <div class="concept-grid"><article class="concept-card"><div class="concept-icon cyan">↗</div><h3>Variação da velocidade</h3><p>Uma força resultante pode aumentar ou diminuir a rapidez de um corpo ou mudar a direção de seu movimento.</p></article><article class="concept-card"><div class="concept-icon pink">↔</div><h3>Mudança de direção</h3><p>Mesmo que a rapidez permaneça constante, uma alteração na direção da velocidade também representa mudança no movimento.</p></article><article class="concept-card"><div class="concept-icon green">●</div><h3>Força resultante</h3><p>É o efeito combinado de todas as forças sobre o corpo. Forças equilibradas têm resultante nula; forças não equilibradas podem mudar o movimento.</p></article></div>
+          <div class="real-photo"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=85" alt="Ambiente de laboratório científico real, com equipamentos e iluminação detalhada" loading="lazy"><div><span class="history-date">CIÊNCIA EM AÇÃO</span><h3>Observar, medir, explicar</h3><p>Em um experimento, compare a condição inicial com o que acontece depois da interação. A observação deve sustentar a conclusão.</p></div></div>
+          <div class="callout"><strong>Atenção a uma ideia comum</strong><p>Não é correto afirmar que toda força faz um objeto necessariamente acelerar: forças podem se equilibrar. O que altera a velocidade é a força resultante não nula.</p></div>
+        </section>
+
+        <section class="slide" id="screen3" aria-labelledby="title3" hidden>
+          <div class="slide-kicker">ETAPA 03 · EFEITOS DA FORÇA</div><h2 id="title3">A força também pode deformar</h2>
+          <p class="lead">Ao apertar, esticar, comprimir ou dobrar um material, aplicamos forças que podem modificar sua forma. Algumas deformações são temporárias; outras permanecem mesmo depois que a força deixa de atuar.</p>
+          <div class="scene-frame"><div class="scene-topline"><span>MODELO DE COMPRESSÃO 3D</span><span class="scene-chip">Ajuste a força aplicada</span></div><div class="scene-slot scene-slot-short" id="sceneSlot3"><div class="scene-loading"><span class="loader"></span>Preparando experimento…</div></div><div class="scene-caption">A representação 3D é um modelo conceitual: materiais reais têm limites elásticos e podem se romper.</div></div>
+          <div class="control-panel"><div class="control-heading"><div><span class="eyebrow">CONTROLE DO EXPERIMENTO</span><h3>Intensidade da compressão</h3></div><output id="deformValue">40%</output></div><input id="deformSlider" type="range" min="0" max="100" value="40" aria-label="Intensidade da compressão"><div class="range-labels"><span>Sem compressão</span><span>Compressão elevada</span></div><p id="deformFeedback" class="control-feedback">Observe a mudança de forma conforme a compressão aumenta.</p></div>
+          <div class="concept-grid two"><article class="concept-card"><div class="concept-icon cyan">↗</div><h3>Deformação elástica</h3><p>O corpo tende a recuperar a forma original quando a força é retirada, desde que não ultrapasse seu limite elástico.</p></article><article class="concept-card"><div class="concept-icon pink">⬟</div><h3>Deformação plástica</h3><p>A mudança de forma permanece depois da retirada da força, como pode ocorrer ao amassar uma lata.</p></article></div>
+          <div class="real-photo"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=85" alt="Pessoa trabalhando em experimento técnico com equipamentos em bancada" loading="lazy"><div><span class="history-date">EXEMPLOS DO COTIDIANO</span><h3>Materiais respondem de formas diferentes</h3><p>Uma mola, uma bola de borracha e uma lata não apresentam a mesma resposta à mesma força. O material e a intensidade da força importam.</p></div></div>
+        </section>
+
+        <section class="slide" id="screen4" aria-labelledby="title4" hidden>
+          <div class="slide-kicker">ETAPA 04 · INTERAÇÕES</div><h2 id="title4">A natureza das interações</h2>
+          <p class="lead">Uma força surge de uma interação entre corpos ou entre um corpo e um campo. Algumas interações exigem contato direto; outras podem ocorrer mesmo quando os objetos estão separados.</p>
+          <div class="scene-frame"><div class="scene-topline"><span>LABORATÓRIO DE INTERAÇÕES</span><span class="scene-chip">Alterne os modelos</span></div><div class="scene-slot scene-slot-short" id="sceneSlot4"><div class="scene-loading"><span class="loader"></span>Preparando interações…</div></div><div class="scene-caption">A cena representa interações de contato e à distância; escolha abaixo o fenômeno que deseja investigar.</div></div>
+          <div class="interaction-switches" role="group" aria-label="Selecionar tipo de interação"><button class="choice-button active" data-interaction="contact">Contato</button><button class="choice-button" data-interaction="gravity">Gravitacional</button><button class="choice-button" data-interaction="magnetic">Magnética</button><button class="choice-button" data-interaction="electric">Elétrica</button></div>
+          <div class="interaction-description" aria-live="polite"><h3 id="interactionTitle">Interações de contato</h3><p id="interactionText">Ocorrem quando os corpos se tocam, como a mão empurrando uma caixa, o chão sustentando um livro ou uma superfície exercendo atrito sobre um objeto.</p></div>
+          <div class="concept-grid"><article class="concept-card"><div class="concept-icon cyan">✋</div><h3>Contato</h3><p>Normal, atrito, tensão e força elástica são exemplos de forças associadas a interações de contato.</p></article><article class="concept-card"><div class="concept-icon green">↓</div><h3>Gravitacional</h3><p>Massas interagem gravitacionalmente à distância. Perto da superfície terrestre, percebemos essa interação como peso.</p></article><article class="concept-card"><div class="concept-icon pink">✦</div><h3>Magnética e elétrica</h3><p>Ímãs e cargas elétricas podem exercer forças sem contato direto, dependendo de suas propriedades e posições.</p></article></div>
+          <div class="callout"><strong>Conexão importante</strong><p>Uma força não é algo que um corpo “guarda”. Ela descreve uma interação. Para identificar uma força, pergunte: quem interage com quem?</p></div>
+        </section>
+
+        <section class="slide" id="screen5" aria-labelledby="title5" hidden>
+          <div class="slide-kicker">ETAPA 05 · INVESTIGAÇÃO</div><h2 id="title5">Laboratório investigativo</h2>
+          <p class="lead">Agora você controla o experimento. Mude a força aplicada ao carrinho, execute a simulação e observe como o movimento responde. Formule uma hipótese antes de clicar em iniciar.</p>
+          <div class="scene-frame"><div class="scene-topline"><span>SIMULADOR DE FORÇA E MOVIMENTO</span><span class="scene-chip">Experimento manipulável</span></div><div class="scene-slot scene-slot-short" id="sceneSlot5"><div class="scene-loading"><span class="loader"></span>Preparando carrinho…</div></div><div class="scene-caption"><p>Modelo qualitativo: para a mesma massa, uma força resultante maior produz maior aceleração. Nos simuladores externos, altere a força e a massa para comparar os resultados.</p><div class="simulator-actions"><a class="simulator-action" href="https://www.vascak.cz/data/android/physicsatschool/template.php?s=mech_newton22&amp;l=pt" target="_blank" rel="noopener noreferrer">Abrir Vascak · 2ª Lei ↗</a><a class="simulator-action" href="https://phet.colorado.edu/pt_BR/simulations/forces-and-motion-basics" target="_blank" rel="noopener noreferrer">Abrir PhET · Forças e movimento ↗</a></div></div></div>
+          <div class="control-panel"><div class="control-heading"><div><span class="eyebrow">VARIÁVEL INDEPENDENTE</span><h3>Força aplicada ao carrinho</h3></div><output id="forceValue">5 N</output></div><input id="forceSlider" type="range" min="1" max="10" value="5" aria-label="Força aplicada em newtons"><div class="range-labels"><span>1 N</span><span>10 N</span></div><div class="experiment-actions"><button class="primary-button" id="runExperiment">▶ Executar experimento</button><button class="secondary-button" id="resetExperiment">↺ Reiniciar</button></div><p id="experimentFeedback" class="control-feedback" aria-live="polite">Defina uma hipótese e execute o experimento.</p></div>
+          <div class="question-card"><h3>Registre sua hipótese</h3><p>Se aumentarmos a força aplicada ao mesmo carrinho, o que você espera observar?</p><div class="radio-list"><label><input type="radio" name="hypothesis" value="more"> Ele tende a ganhar velocidade mais rapidamente.</label><label><input type="radio" name="hypothesis" value="same"> O movimento será sempre exatamente igual.</label><label><input type="radio" name="hypothesis" value="stop"> Ele necessariamente vai parar.</label></div><p id="hypothesisFeedback" class="control-feedback" aria-live="polite"></p></div>
+        </section>
+
+        <section class="slide" id="screen6" aria-labelledby="title6" hidden>
+          <div class="slide-kicker">ETAPA 06 · CONSOLIDAÇÃO</div><h2 id="title6">Desafio final: pense como cientista</h2>
+          <p class="lead">Responda às questões para verificar se você consegue relacionar forças, movimento, deformação e interações.</p>
+          <div class="quiz-progress"><span id="quizProgressText">Questão 1 de 5</span><div class="progress-track"><span id="quizProgressBar"></span></div></div>
+          <div id="quizContainer" class="quiz-container"></div>
+          <div class="quiz-actions"><button class="secondary-button" id="quizBack" disabled>← Anterior</button><button class="primary-button" id="quizNext">Confirmar e avançar →</button></div>
+          <div id="quizResult" class="quiz-result" hidden></div>
+          <div class="closing-card"><span class="closing-icon">✦</span><div><h3>O que você deve levar desta aula</h3><p>A Dinâmica estuda as relações entre forças e movimento. Forças podem alterar a velocidade, a direção ou a forma de um corpo. Elas sempre representam interações entre corpos ou campos.</p></div></div>
+        </section>
+
+        <nav class="slide-navigation" aria-label="Navegação das etapas"><button class="secondary-button" id="prevSlide" disabled>← Etapa anterior</button><div class="slide-dots" aria-label="Progresso da aula"><button class="slide-dot active" data-goto="1" aria-label="Etapa 1"></button><button class="slide-dot" data-goto="2" aria-label="Etapa 2"></button><button class="slide-dot" data-goto="3" aria-label="Etapa 3"></button><button class="slide-dot" data-goto="4" aria-label="Etapa 4"></button><button class="slide-dot" data-goto="5" aria-label="Etapa 5"></button><button class="slide-dot" data-goto="6" aria-label="Etapa 6"></button></div><button class="primary-button" id="nextSlide">Próxima etapa →</button></nav>
+      </div>
+    </section>
+  </main>
+  <footer class="app-footer"><span>AndreLab · Ciência Interativa</span><span>Conteúdo pedagógico · Prof. Carlos André</span><a href="fisica.html">Voltar ao catálogo de Física</a></footer>
+</body>
+</html>

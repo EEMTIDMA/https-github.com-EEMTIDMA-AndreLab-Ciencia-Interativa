@@ -1,0 +1,629 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{color-scheme:dark;--bg:#050816;--panel:rgba(13,19,41,.78);--panel-strong:rgba(12,18,37,.95);--line:rgba(155,180,255,.17);--text:#f4f7ff;--muted:#aab5d0;--cyan:#00e5ff;--pink:#ff3da6;--green:#67ffb1;--gold:#ffc86a;--radius:20px;--shadow:0 22px 70px rgba(0,0,0,.32)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,rgba(18,51,112,.35),transparent 42%),radial-gradient(ellipse at 90% 18%,rgba(83,21,100,.2),transparent 38%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(1px 1px at 15% 20%,#fff 50%,transparent 100%),radial-gradient(1px 1px at 78% 37%,#fff 50%,transparent 100%),radial-gradient(2px 2px at 42% 76%,#a7d9ff 50%,transparent 100%),radial-gradient(1px 1px at 92% 86%,#fff 50%,transparent 100%);background-size:260px 240px,340px 300px,400px 350px,290px 320px;z-index:-2}.space-glow{position:fixed;width:430px;height:430px;border-radius:50%;filter:blur(110px);opacity:.12;pointer-events:none;z-index:-1}.glow-one{background:#0077ff;top:8%;left:-200px}.glow-two{background:#bd28ff;right:-230px;top:44%}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{cursor:pointer}.app-header{position:sticky;top:0;z-index:20;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:15px clamp(18px,4vw,58px);border-bottom:1px solid var(--line);background:rgba(4,7,19,.82);backdrop-filter:blur(22px)}.brand{display:flex;align-items:center;gap:11px;width:max-content}.brand-mark{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(0,229,255,.55);border-radius:13px;color:var(--cyan);font-family:'Space Grotesk';font-size:24px;font-weight:700;box-shadow:0 0 24px rgba(0,229,255,.1)}.brand-mark span{font-size:10px;position:absolute;margin: -17px 0 0 22px}.brand strong,.brand small{display:block;line-height:1.25}.brand strong{font-family:'Space Grotesk';font-size:17px;letter-spacing:.2px}.brand small{font-size:9px;letter-spacing:2px;color:var(--muted);margin-top:4px}.module-info{text-align:center}.eyebrow,.slide-kicker{font-size:10px;letter-spacing:2px;font-weight:700;color:var(--cyan);text-transform:uppercase}.module-info h1{font:600 clamp(18px,2vw,25px)/1.2 'Space Grotesk';margin:4px 0 0}.module-info h1 span{color:var(--cyan)}.back-button{justify-self:end;border:1px solid var(--line);border-radius:12px;padding:9px 14px;color:#dce5ff;font-size:13px;transition:.2s}.back-button:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-1px)}.app-main{width:min(1500px,100%);margin:auto;padding:36px clamp(14px,3vw,42px) 48px}.lesson-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin:0 0 27px}.lesson-heading h2{font:600 clamp(27px,3.5vw,43px)/1.13 'Space Grotesk';letter-spacing:-1.3px;margin:8px 0 10px}.lesson-subtitle{max-width:760px;color:var(--muted);margin:0;font-size:15px}.lesson-status{display:flex;align-items:center;gap:9px;white-space:nowrap;padding:10px 13px;border:1px solid var(--line);border-radius:30px;color:var(--muted);font-size:12px;background:rgba(8,14,32,.6)}.status-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;box-shadow:0 0 12px currentColor}.lesson-shell{display:grid;grid-template-columns:265px minmax(0,1fr);border:1px solid var(--line);border-radius:24px;overflow:hidden;background:rgba(8,13,30,.55);box-shadow:var(--shadow);backdrop-filter:blur(20px)}.lesson-sidebar{padding:23px 14px;background:linear-gradient(180deg,rgba(12,20,44,.95),rgba(8,13,29,.88));border-right:1px solid var(--line)}.sidebar-title{margin:0 12px 15px;color:#7f91b8;font-size:10px;font-weight:700;letter-spacing:2px}.step-link{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid transparent;background:transparent;color:#b8c3dd;border-radius:13px;padding:12px 10px;margin-bottom:6px;transition:background .2s,border .2s,transform .2s}.step-link:hover{background:rgba(255,255,255,.035);transform:translateX(2px)}.step-link.active{background:linear-gradient(110deg,rgba(0,229,255,.13),rgba(22,48,89,.36));border-color:rgba(0,229,255,.25);color:#fff}.step-number{display:grid;place-items:center;flex:0 0 36px;height:36px;border-radius:10px;border:1px solid rgba(160,180,255,.16);font:600 12px 'Space Grotesk';color:#9baccd}.step-link.active .step-number{background:rgba(0,229,255,.12);border-color:rgba(0,229,255,.45);color:var(--cyan)}.step-link strong,.step-link small{display:block}.step-link strong{font-size:12px;font-weight:700}.step-link small{font-size:10px;color:#8392b4;margin-top:2px}.sidebar-tip{margin:28px 4px 0;padding:14px;border:1px solid rgba(103,255,177,.18);border-radius:14px;background:rgba(103,255,177,.04);display:flex;gap:10px}.sidebar-tip>span{color:var(--green)}.sidebar-tip p{font-size:11px;line-height:1.55;color:#9eabc8;margin:0}.sidebar-tip strong{color:#e6fff4}.lesson-content{min-width:0;padding:clamp(18px,3vw,38px)}.slide{animation:slideIn .32s ease both}.slide[hidden]{display:none!important}@keyframes slideIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}.slide-kicker{margin-bottom:8px}.slide h2{font:600 clamp(25px,3vw,35px)/1.2 'Space Grotesk';letter-spacing:-.6px;margin:0 0 13px}.lead{max-width:950px;color:#c2cbe0;font-size:15px;line-height:1.8;margin:0 0 24px}.scene-frame{overflow:hidden;border:1px solid rgba(112,154,255,.23);border-radius:19px;background:radial-gradient(ellipse at 50% 20%,rgba(25,50,90,.45),rgba(4,8,20,.98) 72%);box-shadow:inset 0 0 40px rgba(0,0,0,.25);margin:20px 0 25px}.scene-topline{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:13px 17px;border-bottom:1px solid rgba(140,166,230,.13);font-size:9px;letter-spacing:1.7px;font-weight:700;color:#93a5ca}.scene-chip{letter-spacing:.3px;text-transform:none;font-size:10px;padding:4px 9px;border-radius:20px;color:var(--cyan);border:1px solid rgba(0,229,255,.2);background:rgba(0,229,255,.06)}.scene-slot{height:360px;position:relative;min-width:0}.scene-slot-short{height:320px}.scene-slot canvas{display:block;width:100%;height:100%;outline:none}.scene-caption{padding:10px 16px;color:#8292b5;font-size:11px;border-top:1px solid rgba(140,166,230,.12)}.scene-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;color:#9ba9c8;font-size:13px}.loader{width:19px;height:19px;border:2px solid rgba(0,229,255,.2);border-top-color:var(--cyan);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.historical-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:25px 0}.history-card{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:rgba(17,24,47,.64)}.history-card img{display:block;width:100%;height:170px;object-fit:cover;object-position:center 25%;background:#10172b;filter:saturate(.82)}.history-card>div{padding:16px}.history-date{font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--cyan)}.history-card h3,.real-photo h3{font:600 19px 'Space Grotesk';margin:5px 0 8px}.history-card p,.real-photo p{font-size:12px;line-height:1.75;color:#aebbd5;margin:0 0 10px}.history-card .history-note{padding-top:9px;border-top:1px solid var(--line);color:#7f91b3;font-size:11px}.callout{padding:17px 19px;border-left:3px solid var(--cyan);border-radius:0 13px 13px 0;background:rgba(0,229,255,.055);margin:22px 0}.callout strong{font-size:13px;color:#e5fbff}.callout p{margin:5px 0 0;color:#b5c4df;font-size:13px;line-height:1.75}.question-card,.control-panel,.interaction-description{border:1px solid var(--line);border-radius:16px;padding:20px;background:rgba(14,21,43,.65);margin:20px 0}.question-card h3,.control-panel h3,.interaction-description h3{font:600 17px 'Space Grotesk';margin:0 0 7px}.question-card p,.interaction-description p{font-size:13px;color:#acbad4;margin:0 0 12px}.question-card label[for]{display:block;color:#8ea1c6;font-size:11px;margin:12px 0 6px}.question-card textarea{width:100%;resize:vertical;border:1px solid var(--line);border-radius:10px;background:rgba(2,6,18,.7);color:var(--text);padding:12px;outline:none}.question-card textarea:focus{border-color:var(--cyan)}.concept-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:22px 0}.concept-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.concept-card{border:1px solid var(--line);border-radius:15px;padding:18px;background:linear-gradient(145deg,rgba(20,29,56,.8),rgba(9,14,30,.7))}.concept-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;font-size:22px;margin-bottom:12px;background:rgba(255,255,255,.05)}.concept-icon.cyan{color:var(--cyan);border:1px solid rgba(0,229,255,.2)}.concept-icon.pink{color:var(--pink);border:1px solid rgba(255,61,166,.2)}.concept-icon.green{color:var(--green);border:1px solid rgba(103,255,177,.2)}.concept-card h3{font:600 15px 'Space Grotesk';margin:0 0 7px}.concept-card p{font-size:12px;color:#a9b7d2;line-height:1.75;margin:0}.real-photo{display:grid;grid-template-columns:minmax(180px,.8fr) 1.2fr;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:rgba(15,21,42,.72);margin:23px 0}.real-photo img{width:100%;height:100%;min-height:190px;object-fit:cover}.real-photo>div{padding:22px}.control-heading{display:flex;justify-content:space-between;align-items:center;gap:15px}.control-heading h3{margin:5px 0 0}.control-heading output{font:600 25px 'Space Grotesk';color:var(--cyan)}input[type=range]{width:100%;accent-color:var(--cyan);margin:19px 0 5px;cursor:pointer}.range-labels{display:flex;justify-content:space-between;color:#8192b6;font-size:10px}.control-feedback{font-size:12px!important;color:#9fb1d1!important;margin:14px 0 0!important}.interaction-switches{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0}.choice-button,.secondary-button,.primary-button{border-radius:11px;padding:10px 15px;font-size:12px;font-weight:700;transition:.2s;border:1px solid var(--line)}.choice-button{background:rgba(14,21,43,.85);color:#aebbd5}.choice-button.active,.choice-button:hover{border-color:rgba(0,229,255,.45);color:var(--cyan);background:rgba(0,229,255,.08)}.primary-button{background:linear-gradient(110deg,#00cfe7,#4d8bff);border-color:transparent;color:#06111d;box-shadow:0 7px 24px rgba(0,196,255,.13)}.primary-button:hover{filter:brightness(1.12);transform:translateY(-1px)}.secondary-button{background:rgba(17,24,47,.8);color:#c5d0e6}.secondary-button:hover:not(:disabled){border-color:rgba(0,229,255,.4);color:var(--cyan)}button:disabled{opacity:.35;cursor:not-allowed}.experiment-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.radio-list{display:grid;gap:10px}.radio-list label{display:flex;gap:10px;align-items:flex-start;color:#c0cbe0;font-size:12px;cursor:pointer}.radio-list input{accent-color:var(--cyan);margin-top:4px}.quiz-progress{display:flex;align-items:center;gap:15px;color:#90a2c4;font-size:11px;margin:20px 0}.progress-track{height:5px;background:#1a2543;border-radius:10px;flex:1;overflow:hidden}.progress-track span{display:block;width:20%;height:100%;background:linear-gradient(90deg,var(--cyan),#7c6dff);transition:width .2s}.quiz-container{border:1px solid var(--line);border-radius:17px;padding:22px;background:rgba(13,20,42,.68);min-height:245px}.quiz-question-count{color:var(--cyan);font-size:10px;font-weight:700;letter-spacing:1.5px}.quiz-container h3{font:600 19px/1.5 'Space Grotesk';margin:8px 0 18px}.quiz-options{display:grid;gap:10px}.quiz-option{display:flex;gap:12px;align-items:flex-start;text-align:left;padding:13px;border:1px solid var(--line);border-radius:11px;background:rgba(255,255,255,.018);color:#c4cfe4;font-size:12px}.quiz-option:hover{border-color:rgba(0,229,255,.35)}.quiz-option.selected{border-color:var(--cyan);background:rgba(0,229,255,.07)}.quiz-option.correct{border-color:var(--green);background:rgba(103,255,177,.07)}.quiz-option.incorrect{border-color:var(--pink);background:rgba(255,61,166,.07)}.option-letter{display:grid;place-items:center;flex:0 0 25px;height:25px;border-radius:8px;background:rgba(255,255,255,.06);font-weight:700;color:#8fa4ce}.quiz-feedback{font-size:12px;padding:12px;border-radius:10px;margin-top:14px;background:rgba(255,255,255,.035);color:#b7c5df}.quiz-actions{display:flex;justify-content:space-between;gap:12px;margin:16px 0}.quiz-result{border:1px solid rgba(103,255,177,.25);border-radius:14px;padding:18px;background:rgba(103,255,177,.06);margin:18px 0}.quiz-result h3{font:600 20px 'Space Grotesk';margin:0 0 6px}.quiz-result p{color:#b7c8df;font-size:13px;margin:0}.closing-card{display:flex;gap:15px;align-items:flex-start;padding:19px;border:1px solid rgba(0,229,255,.2);border-radius:15px;background:linear-gradient(100deg,rgba(0,229,255,.06),rgba(124,109,255,.04));margin-top:24px}.closing-icon{color:var(--cyan);font-size:25px}.closing-card h3{font:600 16px 'Space Grotesk';margin:0 0 6px}.closing-card p{font-size:12px;color:#aebbd4;margin:0}.slide-navigation{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:24px;margin-top:28px;border-top:1px solid var(--line)}.slide-dots{display:flex;gap:7px}.slide-dot{width:8px;height:8px;border:0;border-radius:20px;padding:0;background:#33405f;transition:.2s}.slide-dot.active{width:24px;background:var(--cyan);box-shadow:0 0 14px rgba(0,229,255,.3)}.app-footer{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:20px clamp(18px,4vw,58px);border-top:1px solid var(--line);font-size:11px;color:#7788ab}.app-footer a{color:var(--cyan)}
+@media(max-width:1100px){.lesson-shell{grid-template-columns:225px minmax(0,1fr)}.historical-grid{grid-template-columns:1fr}.history-card{display:grid;grid-template-columns:180px 1fr}.history-card img{height:100%;min-height:210px}.concept-grid{grid-template-columns:1fr 1fr}.concept-grid .concept-card:last-child:nth-child(odd){grid-column:1/-1}}
+@media(max-width:760px){.app-header{grid-template-columns:1fr auto;gap:12px;padding:12px 15px}.module-info{grid-column:1/-1;grid-row:2;text-align:left}.back-button{font-size:11px;padding:8px 10px}.brand-mark{width:36px;height:36px}.app-main{padding:25px 12px 35px}.lesson-heading{display:block}.lesson-heading h2{font-size:30px}.lesson-status{display:inline-flex;margin-top:16px}.lesson-shell{grid-template-columns:1fr}.lesson-sidebar{border-right:0;border-bottom:1px solid var(--line);padding:13px;display:grid;grid-template-columns:1fr 1fr;gap:5px}.sidebar-title,.sidebar-tip{grid-column:1/-1}.step-link{margin:0;padding:9px 7px;gap:7px}.step-number{flex-basis:30px;height:30px;font-size:10px}.step-link strong{font-size:10px}.step-link small{font-size:9px}.sidebar-tip{margin-top:9px}.lesson-content{padding:18px 13px}.scene-slot{height:280px}.scene-slot-short{height:250px}.historical-grid,.concept-grid,.concept-grid.two{grid-template-columns:1fr}.concept-grid .concept-card:last-child:nth-child(odd){grid-column:auto}.history-card{grid-template-columns:112px 1fr}.history-card img{min-height:100%;height:100%;object-position:center}.history-card>div{padding:12px}.history-card h3{font-size:16px}.real-photo{grid-template-columns:1fr}.real-photo img{height:180px;min-height:0}.slide-navigation{flex-wrap:wrap}.slide-dots{order:3;width:100%;justify-content:center}.slide-navigation .primary-button,.slide-navigation .secondary-button{flex:1}.app-footer{display:grid;gap:6px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* =========================================================
+   PADRÃO TIPOGRÁFICO ANDRELAB — alinhado à aula Gravitação 3D
+   Conceitos com fonte ampliada e parágrafos justificados.
+   ========================================================= */
+.lead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(19px, 1.35vw, 22px);
+  line-height: 1.85;
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 1000px;
+  color: #d0d9ee;
+}
+.concept-card p,
+.interaction-description p,
+.real-photo p,
+.callout p,
+.closing-card p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(18px, 1.2vw, 20px);
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+  color: #c1cce2;
+}
+.history-card p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.question-card > p,
+.question-card > div > p {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.75;
+}
+@media (max-width: 760px) {
+  .lead {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  .concept-card p,
+  .interaction-description p,
+  .real-photo p,
+  .callout p,
+  .closing-card p {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .history-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   AJUSTES DE LEGIBILIDADE — AULA 02
+   Fundo de plataforma e área de leitura visualmente distintos.
+   ========================================================= */
+:root {
+  --bg: #13213a;
+  --panel: rgba(24, 39, 65, .88);
+  --panel-strong: rgba(21, 35, 59, .97);
+  --line: rgba(108, 143, 190, .28);
+  --text: #17243a;
+  --muted: #536782;
+  --shadow: 0 22px 70px rgba(5, 15, 35, .22);
+}
+body {
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(75, 140, 210, .34), transparent 42%),
+    radial-gradient(ellipse at 92% 18%, rgba(137, 106, 205, .22), transparent 38%),
+    linear-gradient(135deg, #243956 0%, #182a45 50%, #263b58 100%);
+}
+.app-header {
+  background: rgba(18, 31, 52, .91);
+  border-bottom-color: rgba(179, 207, 242, .18);
+}
+.lesson-shell {
+  background: rgba(239, 245, 252, .96);
+  border-color: rgba(195, 213, 234, .72);
+  box-shadow: 0 24px 65px rgba(3, 13, 30, .28);
+}
+.lesson-sidebar {
+  background: linear-gradient(180deg, #203653, #182a44);
+  border-right-color: rgba(255,255,255,.1);
+}
+.lesson-content {
+  color: #192941;
+  background: linear-gradient(180deg, #f2f6fb 0%, #e9f0f8 100%);
+}
+.slide h2,
+.question-card h3,
+.control-panel h3,
+.interaction-description h3,
+.concept-card h3,
+.closing-card h3,
+.quiz-container h3,
+.quiz-result h3 {
+  color: #182a43;
+}
+.lead {
+  color: #334862;
+}
+.concept-card {
+  background: linear-gradient(145deg, #ffffff, #f4f8fd);
+  border-color: #d5e0ed;
+  box-shadow: 0 7px 18px rgba(30, 55, 85, .055);
+}
+.concept-card p,
+.interaction-description p,
+.real-photo p,
+.callout p,
+.closing-card p,
+.question-card p {
+  color: #3d526d;
+}
+.concept-icon {
+  width: max-content;
+  min-width: 54px;
+  max-width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  white-space: nowrap;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 12px;
+}
+.concept-card h3 {
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.4;
+  letter-spacing: -.15px;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+.callout {
+  background: #e1f6fa;
+  border-left-color: #008da8;
+}
+.callout strong {
+  color: #12536a;
+}
+.question-card,
+.control-panel,
+.interaction-description {
+  background: #ffffff;
+  border-color: #d3dfed;
+  box-shadow: 0 7px 20px rgba(30,55,85,.05);
+}
+.question-card label[for] {
+  color: #415b79;
+}
+.question-card textarea {
+  background: #f7faff;
+  border-color: #c8d7e8;
+  color: #17243a;
+}
+.real-photo {
+  background: #ffffff;
+  border-color: #d3dfed;
+}
+.scene-frame {
+  background: linear-gradient(145deg, #233a56, #101d31 80%);
+  border-color: #9cb4d0;
+  box-shadow: 0 12px 26px rgba(16, 35, 60, .17);
+}
+.scene-topline {
+  color: #c4d7f0;
+}
+.scene-caption {
+  color: #c1d0e4;
+}
+.scene-loading {
+  color: #e0ebfa;
+}
+.scene-error {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+  color: #f8d6d6;
+  background: #18273d;
+  font-size: 15px;
+}
+.quiz-container {
+  background: #ffffff;
+  border-color: #d3dfed;
+}
+.quiz-question-count {
+  color: #087f9b;
+}
+.quiz-container h3 {
+  color: #192941;
+}
+.quiz-option {
+  background: #f7faff;
+  border-color: #d5e0ed;
+  color: #2b405c;
+}
+.quiz-option.selected {
+  background: #e1f7fb;
+}
+.quiz-feedback {
+  background: #edf3fa;
+  color: #344b68;
+}
+.quiz-result {
+  background: #e8faf1;
+  border-color: #b8e8d0;
+}
+.quiz-result p {
+  color: #365a4a;
+}
+.closing-card {
+  background: linear-gradient(100deg, #e1f7fb, #f0edff);
+  border-color: #c4d7ec;
+}
+.closing-icon {
+  color: #087f9b;
+}
+.closing-card p {
+  color: #3b506a;
+}
+@media (max-width: 760px) {
+  .lesson-content {
+    background: #edf3fa;
+  }
+  .concept-icon {
+    min-width: 52px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   CONTRASTE EXTERNO E HIERARQUIA VISUAL — AULA 02
+   Área de leitura permanece clara; títulos ganham acentos fortes.
+   ========================================================= */
+:root {
+  --cyan: #00d9f5;
+  --pink: #ff3d9a;
+  --green: #00a86b;
+  --gold: #ffbd24;
+  --muted: #e0eaff;
+}
+/* Textos fora do slide: cabeçalho, introdução, status e rodapé. */
+.brand strong { color: #ffffff; }
+.brand small { color: #c6d6f0; }
+.module-info .eyebrow,
+.lesson-heading .eyebrow { color: #42e7ff; }
+.lesson-heading h2 {
+  color: #ffffff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .22);
+}
+.lesson-subtitle {
+  color: #f0f5ff;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.75;
+}
+.lesson-status {
+  color: #f1f6ff;
+  background: rgba(9, 20, 39, .82);
+  border-color: rgba(165, 201, 244, .35);
+}
+.app-footer { color: #dbe7fa; }
+.app-footer a { color: #5beaff; font-weight: 700; }
+.back-button { color: #ffffff; border-color: rgba(180, 211, 248, .38); }
+.back-button:hover { color: #5beaff; }
+/* Menu lateral mais legível contra o fundo escuro. */
+.sidebar-title { color: #d0e1ff; }
+.step-link { color: #f0f5ff; }
+.step-link strong { color: #ffffff; }
+.step-link small { color: #d0ddf4; }
+.step-number { color: #e0ebff; }
+.sidebar-tip p { color: #e0eaff; }
+/* Títulos e subtítulos dentro da área clara do slide. */
+.slide-kicker {
+  color: #006f91;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+.slide h2 {
+  color: #102b4d;
+  border-left: 5px solid #087fce;
+  padding-left: 13px;
+  text-shadow: none;
+}
+.slide h3,
+.concept-card h3,
+.question-card h3,
+.control-panel h3,
+.interaction-description h3,
+.closing-card h3,
+.quiz-container h3,
+.quiz-result h3 {
+  color: #153d72;
+}
+.concept-card:nth-child(3n+1) h3 { color: #075f86; }
+.concept-card:nth-child(3n+2) h3 { color: #8b1b60; }
+.concept-card:nth-child(3n) h3 { color: #087348; }
+.real-photo h3 { color: #123d72; }
+.control-heading h3 { color: #123d72; }
+.control-heading output { color: #006fbd; }
+.question-card label[for] { color: #28476c; font-weight: 700; }
+.scene-topline { color: #f0f6ff; }
+.scene-chip { color: #6cf1ff; }
+.scene-caption { color: #e1ebfa; }
+.scene-loading { color: #ffffff; }
+@media (max-width: 760px) {
+  .lesson-heading h2 { color: #ffffff; }
+  .lesson-subtitle { color: #f0f5ff; }
+  .slide h2 { font-size: clamp(24px, 6vw, 31px); }
+}
+
+
+/* =========================================================
+   REFINO FINAL — SIMULAÇÕES SEM FOTOS DE FUNDO E CONTRASTE
+   Mantém o ambiente 3D limpo; melhora rótulos e alternativas.
+   ========================================================= */
+/* As simulações ficam com fundo 3D próprio, sem fotografias translúcidas. */
+.scene-frame {
+  background: linear-gradient(145deg, #233a56, #101d31 80%);
+}
+/* Textos auxiliares dentro dos cartões claros: cinza escuro de alto contraste. */
+.lesson-content .lead { color: #263b55; }
+.lesson-content .concept-card p,
+.lesson-content .interaction-description p,
+.lesson-content .real-photo p,
+.lesson-content .callout p,
+.lesson-content .closing-card p,
+.lesson-content .question-card p,
+.lesson-content .control-feedback,
+.lesson-content .quiz-feedback,
+.lesson-content .quiz-result p {
+  color: #263b55 !important;
+}
+.lesson-content .question-card label[for],
+.lesson-content .radio-list label {
+  color: #233c5b !important;
+  font-weight: 600;
+}
+.lesson-content .range-labels {
+  color: #344b67;
+  font-weight: 700;
+  font-size: 12px;
+}
+.lesson-content .control-heading .eyebrow {
+  color: #006a87;
+  font-weight: 800;
+}
+.lesson-content .control-heading h3 { color: #153d72; }
+.lesson-content .control-heading output {
+  color: #005fa8;
+  background: #e8f4ff;
+  border: 1px solid #b8d8f4;
+  border-radius: 9px;
+  padding: 2px 9px;
+}
+.lesson-content .quiz-option {
+  color: #233c5b;
+  background: #f5f9ff;
+  border-color: #c3d3e5;
+  font-weight: 600;
+}
+.lesson-content .quiz-option .option-letter {
+  color: #064f86;
+  background: #e0efff;
+}
+.lesson-content .quiz-feedback {
+  background: #eaf2fb;
+  border: 1px solid #cbdced;
+}
+.lesson-content .control-feedback {
+  background: #edf4fb;
+  border-left: 3px solid #087fce;
+  border-radius: 0 8px 8px 0;
+  padding: 9px 11px;
+}
+.lesson-content .radio-list input[type="radio"] {
+  accent-color: #006fbd;
+  transform: scale(1.08);
+}
+.lesson-content .callout {
+  background: #edf8fc;
+  border-left-color: #008da8;
+}
+.lesson-content .callout strong { color: #075a73; }
+
+/* =========================================================
+   ANDRELAB — LAYOUT PEDAGÓGICO LADO A LADO
+   Slides conceituais: explicação e simulação em paralelo.
+   Investigação (etapa 5) e avaliação (etapa 6) preservam
+   o layout vertical para dar espaço aos controles e respostas.
+   ========================================================= */
+@media (min-width: 1050px) {
+  .lesson-content > .slide:not(#screen5):not(#screen6) {
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(340px, 1.08fr);
+    column-gap: clamp(20px, 2.4vw, 34px);
+    row-gap: 0;
+    align-items: start;
+  }
+
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .slide-kicker,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > h2,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .concept-grid,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .real-photo,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .callout,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .question-card {
+    grid-column: 1 / -1;
+  }
+
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .slide-kicker { margin-bottom: 8px; }
+  .lesson-content > .slide:not(#screen5):not(#screen6) > h2 { margin-bottom: 17px; }
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .lead {
+    grid-column: 1;
+    align-self: center;
+    margin: 4px 0 22px;
+    max-width: none;
+    font-size: clamp(16px, 1.12vw, 18px);
+    line-height: 1.85;
+  }
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .scene-frame {
+    grid-column: 2;
+    grid-row: 3 / span 1;
+    width: 100%;
+    min-width: 0;
+    margin: 0 0 24px;
+    align-self: stretch;
+  }
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .scene-frame .scene-slot,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .scene-frame .scene-slot-short {
+    height: clamp(245px, 23vw, 315px);
+  }
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .concept-grid {
+    margin-top: 2px;
+    margin-bottom: 22px;
+  }
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .real-photo,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .callout,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .question-card {
+    width: 100%;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1049px) {
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .scene-frame {
+    margin-top: 16px;
+  }
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .scene-frame .scene-slot,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .scene-frame .scene-slot-short {
+    height: 300px;
+  }
+}
+
+@media (max-width: 760px) {
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .scene-frame {
+    margin: 16px 0 22px;
+  }
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .scene-frame .scene-slot,
+  .lesson-content > .slide:not(#screen5):not(#screen6) > .scene-frame .scene-slot-short {
+    height: 270px;
+  }
+}
+
+
+/* =========================================================
+   SIMULAÇÕES NEWTON — MODELO DE LABORATÓRIO MAIS REALISTA
+   Fundo claro para destacar os objetos, as rodas e os vetores.
+   ========================================================= */
+.scene-frame {
+  background: #f1f5f9;
+  border-color: #b9c8d8;
+  box-shadow: 0 14px 32px rgba(22, 42, 67, .13);
+}
+.scene-topline {
+  background: linear-gradient(100deg, #142b45, #1c4264);
+  color: #f3f8ff;
+  border-bottom-color: #294967;
+}
+.scene-chip {
+  color: #ffffff;
+  background: #0878a9;
+  border-color: #53bde3;
+}
+.scene-slot {
+  background: #eaf0f6;
+}
+.scene-caption {
+  background: #eaf0f6;
+  color: #263e57;
+  border-top-color: #cbd6e1;
+  font-size: 12px;
+}
+.scene-loading {
+  color: #263e57;
+}
+.scene-loading .loader {
+  border-color: rgba(8, 120, 169, .2);
+  border-top-color: #0878a9;
+}
+
+
+/* Controles das simulações realistas do cotidiano */
+.scene-replay-button{position:absolute;z-index:5;left:12px;bottom:12px;border:1px solid rgba(8,91,153,.35);border-radius:10px;padding:9px 13px;background:rgba(255,255,255,.96);color:#17324f;font-size:12px;font-weight:700;box-shadow:0 5px 18px rgba(16,36,60,.18);transition:transform .18s,background .18s}
+.scene-replay-button:hover{background:#e7f5ff;transform:translateY(-1px)}
+.scene-replay-button:focus-visible{outline:3px solid #1687cf;outline-offset:2px}
+
+/* CORREÇÃO DE CONTRASTE — título principal da Aula 02 */
+.app-header .module-info h1 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .35);
+}
+.app-header .module-info h1 span {
+  color: #38e8ff !important;
+  opacity: 1 !important;
+  text-shadow: 0 0 14px rgba(56, 232, 255, .24);
+}
+.app-header .module-info .eyebrow {
+  color: #8fefff !important;
+  opacity: 1 !important;
+}
+@media (max-width: 760px) {
+  .app-header .module-info h1 {
+    font-size: clamp(21px, 5vw, 27px);
+    line-height: 1.25;
+  }
+}
+
+/* Aula 02 — identificação da visão interna do ônibus */
+.bus-interior-hint{
+  position:absolute;left:12px;bottom:12px;z-index:4;
+  max-width:calc(100% - 24px);padding:7px 11px;border-radius:999px;
+  color:#063047;background:rgba(142,244,255,.94);
+  border:1px solid rgba(0,112,153,.25);box-shadow:0 4px 18px rgba(0,35,65,.18);
+  font:700 10px/1.3 'DM Sans',sans-serif;letter-spacing:.35px;
+  pointer-events:none;
+}
+.scene-slot .scene-replay-button{z-index:5}
+@media(max-width:760px){.bus-interior-hint{font-size:9px;left:8px;bottom:8px;padding:6px 9px}}
+
+
+/* Simuladores originais incorporados diretamente do Physics at School */
+.scene-slot.external-simulation {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+.scene-slot.external-simulation iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  border: 0;
+  background: #fff;
+}
+.simulator-fallback {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  padding: 8px 11px;
+  border-radius: 9px;
+  background: rgba(15, 35, 60, .92);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.4;
+  box-shadow: 0 4px 14px rgba(0,0,0,.18);
+}
+.simulator-fallback:hover { background: #0878d1; color: #fff; }
+@media (max-width: 760px) {
+  .scene-slot.external-simulation, .scene-slot.external-simulation.scene-slot-short { height: 330px; }
+  .scene-slot.external-simulation iframe { min-height: 330px; }
+  .simulator-fallback { left: 8px; right: 8px; bottom: 8px; text-align: center; }
+}
+
+
+/* Legendas e botões abaixo dos simuladores, sem avisos sobrepostos à área de experiência */
+.scene-caption strong{display:block;color:#17324f;font-size:13px;margin:0 0 4px}
+.scene-caption p{margin:0 0 10px;line-height:1.65}
+.simulator-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+.simulator-action{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid #9bb6ce;border-radius:9px;padding:8px 11px;background:#fff;color:#174366;font-size:11px;font-weight:700;line-height:1.35;cursor:pointer;transition:background .18s,border-color .18s,transform .18s}
+.simulator-action:hover{background:#e1f4ff;border-color:#1687cf;transform:translateY(-1px)}
+.simulator-action:focus-visible{outline:3px solid #1687cf;outline-offset:2px}
+.scene-slot.external-simulation+.scene-caption{background:#eaf0f6}
+@media(max-width:650px){.simulator-actions{display:grid;grid-template-columns:1fr}.simulator-action{width:100%;text-align:center}}
+
+
+
+/* Dinâmica 3 — diagramas e controles próprios, mantendo o padrão visual da Dinâmica 2. */
+@media (min-width: 1050px) {
+  #screen3 > .control-panel, #screen4 > .control-panel, #screen5 > .control-panel,
+  #screen5 > .interaction-switches, #screen6 > .quiz-progress, #screen6 > .quiz-container,
+  #screen6 > .quiz-actions, #screen6 > .quiz-result, #screen6 > .closing-card { grid-column: 1 / -1; }
+}
+.force-diagram svg, .incline-scene svg, .pulley-scene svg { display:block; width:100%; height:100%; min-height:260px; }
+.force-diagram, .incline-scene, .pulley-scene { height:auto; min-height:270px; background:radial-gradient(ellipse at center,rgba(0,229,255,.045),transparent 70%); }
+.force-diagram svg text, .incline-scene svg text, .pulley-scene svg text { font-family:'Space Grotesk',Arial,sans-serif; }
+.interaction-map { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); align-items:center; gap:8px; padding:18px; min-height:230px; }
+.interaction-node { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px; min-width:0; min-height:110px; border:1px solid var(--line); border-radius:14px; background:rgba(17,24,47,.82); text-align:center; padding:10px 6px; }
+.interaction-node span { font-size:28px; }
+.interaction-node strong { color:#e9f3ff; font-size:13px; }
+.interaction-node small { color:#91a4c7; font-size:10px; line-height:1.4; }
+.interaction-link { display:flex; flex-direction:column; gap:7px; text-align:center; color:#aebbd5; font-size:10px; line-height:1.45; }
+.interaction-link span:first-child { color:var(--cyan); font-weight:700; }
+.interaction-link.gravity span:first-child { color:var(--pink); }
+@media (max-width:760px) {
+  .interaction-map { grid-template-columns:1fr; gap:8px; }
+  .interaction-node { min-height:70px; }
+  .interaction-link { padding:5px 0; }
+  .force-diagram svg, .incline-scene svg, .pulley-scene svg { min-height:220px; }
+}
